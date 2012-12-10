@@ -15,6 +15,12 @@ It's better to test it before use it as default configuration.
 So clone the repo into emacs-conf and cd it and run 
 emacs -q -l init.el
 
+### ELPA Dependency 
+make sure following package all existed 
+
+mode-compile
+
+
 ### Feture log
 
 1. on branch master
