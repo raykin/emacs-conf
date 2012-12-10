@@ -18,7 +18,7 @@ emacs -q -l init.el
 ### ELPA Dependency 
 make sure following package all existed 
 
-mode-compile
+* mode-compile
 
 
 ### Feture log
