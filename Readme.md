@@ -12,14 +12,15 @@ Feature log is really needed.
 
 ### Usage
 It's better to test it before use it as default configuration.
+
 So clone the repo into emacs-conf and cd it and run 
+```shell
 emacs -q -l init.el
+```
+First run will take several minutes to install elpa packages
 
 ### ELPA Dependency 
-make sure following package all existed 
-
-* mode-compile
-
+see code variable my-packages in init.el
 
 ### Feture log
 
