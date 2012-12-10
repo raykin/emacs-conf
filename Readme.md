@@ -29,3 +29,5 @@ start with emacs-starter-kit and add a little custom config.
 
 2. Add smart tab feature on smart-tab branch. Its hotkey conflict with yas, so we change latter hot key 
 so far so good.
+
+3. Add session feature on session-mode branch.

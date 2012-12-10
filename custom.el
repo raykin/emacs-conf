@@ -8,3 +8,7 @@
 ;; see more on http://blog.binchen.org/?p=357
 (global-set-key (kbd "C-;") 'yas/expand)
 
+;; session mode
+(require 'session)
+(add-hook 'after-init-hook 'session-initialize)
+(setq desktop-globals-to-save '(desktop-missing-file-warning))     
