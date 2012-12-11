@@ -31,3 +31,5 @@ start with emacs-starter-kit and add a little custom config.
 so far so good.
 
 3. Add session feature on session-mode branch.
+
+4. Add ror-kit branch to add several convenient lib: autopair, rhtml, sass, yaml.

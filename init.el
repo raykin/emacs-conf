@@ -1,4 +1,5 @@
 (require 'package)
+
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
 (package-initialize)
@@ -8,14 +9,20 @@
 
 ;; Add in your own as you wish:
 (defvar my-packages '(starter-kit starter-kit-lisp starter-kit-bindings starter-kit-js starter-kit-ruby
-			mode-compile session)
+                                  mode-compile session)
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))
 
+;; Add loading path
 (add-to-list 'load-path default-directory)
 (add-to-list 'load-path (concat default-directory "plugin"))
+(add-to-list 'load-path (concat default-directory "plugin/rhtml/"))
+
+;; custom config, most are global lib and configuration
 (load "custom.el")
 
+;; group of useful RoR plugins
+(load "ror-kit.el")
