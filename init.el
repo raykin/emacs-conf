@@ -9,7 +9,7 @@
 
 ;; Add in your own as you wish:
 (defvar my-packages '(starter-kit starter-kit-lisp starter-kit-bindings starter-kit-js starter-kit-ruby
-                                  mode-compile session)
+                                  mode-compile session markdown-mode)
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p my-packages)
@@ -26,3 +26,9 @@
 
 ;; group of useful RoR plugins
 (load "ror-kit.el")
+
+
+;; my start working dir. change it to your favorite
+;; put it at the end of file cause it can change emacs variables, ex: default-directory
+(cd "~/studio/ticdev")
+
