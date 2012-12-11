@@ -2,13 +2,16 @@
 24
 
 ### Project Rule
-I've copy and create some emacs configuration repo.But all are not good enough and maintatinable.
+I've copy and create some emacs configuration repos.But all are not good enough and maintatinable.
 
-And finally I decide follow several rules to
+And finally I decide follow several rules to create a new one.
 
-Less configuration is much more better. Stable is most important. So master branch must be less and stable.
-Every new feature which depend on other resources must be build on a new branch first.
-Feature log is really needed.
+* Less configuration is much more better.
+* Stable is most important.
+* So master branch must be less and stable.
+* Every new feature which depend on other resources must be build on a
+  new branch first.
+* Feature log is really needed.
 
 ### Usage
 It's better to test it before use it as default configuration.
