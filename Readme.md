@@ -22,7 +22,7 @@ First run will take several minutes to install elpa packages
 ### ELPA Dependency 
 see code variable my-packages in init.el
 
-### Feture log
+### Feature log
 
 1. on branch master
 start with emacs-starter-kit and add a little custom config.
