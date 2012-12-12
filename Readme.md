@@ -39,3 +39,5 @@ so far so good.
 
 5. Add markdown-mode and other global configure.
 So far so good.
+
+6. Add Textmate-mode configure.

@@ -20,6 +20,12 @@
 (add-to-list 'auto-mode-alist '("\\.md" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown" . markdown-mode))
 
+;; Textmate mode
+(textmate-mode t)
+(global-set-key (kbd "M-/") 'comment-or-uncomment-region-or-line)
+(global-set-key (kbd "M-t") 'textmate-goto-file)
+(global-set-key (kbd "M-T") 'textmate-goto-symbol)
+
 ;; list of global mode
 (global-linum-mode 1)
 
