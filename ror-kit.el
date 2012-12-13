@@ -13,10 +13,6 @@
 (add-hook 'rhtml-mode-hook 'rinari-minor-mode)
 (add-hook 'rhtml-mode-hook 'turn-off-auto-fill)
 
-;; Electric Mode
-(require 'ruby-electric)
-(add-hook 'ruby-mode-hook 'ruby-electric-mode)
-
 ;; Sass
 (require 'sass-mode)
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . sass-mode))
