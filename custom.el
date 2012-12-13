@@ -1,9 +1,9 @@
 ;; Add smart-tab
 (require 'smart-tab)
 (global-smart-tab-mode 1)
-;; it make yas hotkey disworked. so we remap yas hotkey
+;; smart-tab make yas hotkey disworked. so we remap yas hotkey
 ;; see more on http://blog.binchen.org/?p=357
-(global-set-key (kbd "C-;") 'yas/expand)
+(global-set-key (kbd "M-p") 'yas/expand)
 
 ;; session mode
 (require 'session)
