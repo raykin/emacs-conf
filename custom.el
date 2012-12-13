@@ -12,7 +12,8 @@
 
 ;; Add custom yasnippet
 (yas/define-snippets 'ruby-mode
-                     '(("fs" ", :focus => true " ", focus => true" nil "control structure" nil nil nil)))
+                     '(("fs" ", :focus => true " ", focus => true" nil "control structure" nil nil nil)
+                       ("d" "def ${name}\n  $0\nend " "def ... end " nil "control structure" nil nil nil)))
 
 ;; Markdown
 (autoload 'markdown-mode "markdown-mode"
