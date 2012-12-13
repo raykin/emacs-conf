@@ -41,3 +41,5 @@ so far so good.
 So far so good.
 
 6. Add Textmate-mode configure.
+
+6.5 remove ruby-electric on ror-kit branch. cause it conflict with smart-tab.
