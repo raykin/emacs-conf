@@ -37,3 +37,10 @@
 ;; how to remove this hook on markdown-mode
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (add-hook 'prog-mode-hook 'turn-off-auto-fill)
+
+(require 'color-theme-gruber-darker)
+(color-theme-gruber-darker)
+
+;; Setting Emacs Split to Horizontal
+(setq split-height-threshold 0)
+(setq split-width-threshold nil)
