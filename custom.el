@@ -13,7 +13,10 @@
 ;; Add custom yasnippet
 (yas/define-snippets 'ruby-mode
                      '(("fs" ", :focus => true " ", focus => true" nil "control structure" nil nil nil)
-                       ("d" "def ${name}\n  $0\nend " "def ... end " nil "control structure" nil nil nil)))
+                       ("d" "def ${name}\n  $0\nend " "def ... end " nil "control structure" nil nil nil)
+                       ("do" "do\n${block}  \nend\n " "do ... end " nil "control structure" nil nil nil)
+                       ("dob" "do \|${e}\| \n \nend " "do ... end " nil "control structure" nil nil nil)
+                       ))
 
 ;; Markdown
 (autoload 'markdown-mode "markdown-mode"
@@ -44,3 +47,6 @@
 ;; Setting Emacs Split to Horizontal
 (setq split-height-threshold 0)
 (setq split-width-threshold nil)
+
+;; GUI
+(set-face-attribute 'default nil :height 170)
