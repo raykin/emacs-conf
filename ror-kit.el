@@ -13,6 +13,10 @@
 (add-hook 'rhtml-mode-hook 'rinari-minor-mode)
 (add-hook 'rhtml-mode-hook 'turn-off-auto-fill)
 
+;; autopair
+(require 'autopair)
+(autopair-global-mode) ;; to enable in all buffers
+
 ;; Sass
 (require 'sass-mode)
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . sass-mode))
