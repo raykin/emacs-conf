@@ -8,7 +8,7 @@
   (package-refresh-contents))
 
 ;; Add in your own as you wish:
-(defvar my-packages '(starter-kit starter-kit-lisp starter-kit-bindings starter-kit-js starter-kit-ruby mode-compile session markdown-mode color-theme color-theme-gruber-darker)
+(defvar my-packages '(starter-kit starter-kit-lisp starter-kit-bindings starter-kit-js starter-kit-ruby mode-compile session markdown-mode color-theme color-theme-gruber-darker yasnippet-bundle textmate)
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p my-packages)
