@@ -4,7 +4,7 @@
 ### Project Rule
 I've copy and create some emacs configuration repos.But all are not good enough and maintatinable.
 
-And finally I decide follow several rules to create a new one.
+And finally I decide following several rules to create a new one.
 
 * Less configuration is much more better.
 * Stable is most important.
@@ -42,4 +42,4 @@ So far so good.
 
 6. Add Textmate-mode configure.
 
-6.5 remove ruby-electric on ror-kit branch. cause it conflict with smart-tab.
+7. remove ruby-electric on ror-kit branch. cause it conflict with smart-tab.
