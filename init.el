@@ -30,3 +30,6 @@
 ;; my start working dir. change it to your favorite
 ;; put it at the end of file cause it can change emacs variables, ex: default-directory
 (cd "~/studio/ticdev")
+
+;; remove autofill which was defined in emacs-starter-kit
+(remove-hook 'prog-mode-hook 'esk-local-comment-auto-fill)
