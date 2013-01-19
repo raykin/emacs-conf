@@ -1,5 +1,5 @@
 ;; install necessary packages
-(defvar ror-packages '(autopair sass-mode yaml-mode )
+(defvar ror-packages '(autopair sass-mode yaml-mode rinari)
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p ror-packages)
@@ -12,6 +12,9 @@
 (add-to-list 'auto-mode-alist '("\\.rjs\\'" . rhtml-mode))
 (add-hook 'rhtml-mode-hook 'rinari-minor-mode)
 (add-hook 'rhtml-mode-hook 'turn-off-auto-fill)
+
+;; custom Ruby Mode
+(add-hook 'ruby-mode-hook 'turn-off-auto-fill)
 
 ;; autopair
 (require 'autopair)
