@@ -23,6 +23,9 @@
 ;; custom config, most are global lib and configuration
 (load "custom.el")
 
+(add-to-list 'load-path (concat default-directory "plugin/Enhanced-Ruby-Mode"))
+(require 'ruby-mode)
+
 ;; group of useful RoR plugins
 (load "ror-kit.el")
 
