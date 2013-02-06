@@ -49,5 +49,9 @@
 (setq split-height-threshold 0)
 (setq split-width-threshold nil)
 
+;; coffee script
+(require 'coffee-mode)
+(setq coffee-tab-width 2)
+
 ;; GUI
 (set-face-attribute 'default nil :height 170)
