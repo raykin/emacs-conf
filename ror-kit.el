@@ -1,5 +1,5 @@
 ;; install necessary packages
-(defvar ror-packages '(autopair sass-mode yaml-mode )
+(defvar ror-packages '(autopair sass-mode yaml-mode rinari)
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p ror-packages)

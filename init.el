@@ -25,10 +25,10 @@
 
 (add-to-list 'load-path (concat default-directory "plugin/Enhanced-Ruby-Mode"))
 (require 'ruby-mode)
-
+;; all ruby configuration must after the above code
 ;; group of useful RoR plugins
 (load "ror-kit.el")
-
+(load "custom_rinari.el")
 
 ;; my start working dir. change it to your favorite
 ;; put it at the end of file cause it can change emacs variables, ex: default-directory
