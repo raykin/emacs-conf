@@ -18,6 +18,13 @@
                        ("dop" "do \|${e}\| \n \nend\n " "do ... end " nil "control structure" nil nil nil)
                        ("inj" "inject\(${e}\) do \|memo, e\| \n memo \nend " "do ... end " nil "control structure" nil nil nil)
                        ))
+(yas/define-snippets 'rhtml-mode
+                     '(("%" "<% $0 %>" "<% %>" nil "control structure" nil nil nil)
+                       ("%=" "<%= $0 %>" "<%= %>" nil "control structure" nil nil nil)
+                       ("e" "<% end %>" "<%= %>" nil "control structure" nil nil nil)
+                       ("tab" "<ul class='nav nav-tabs'>\n$0\n</ul>" "<%= %>" nil "control structure" nil nil nil)
+                       ))
+
 
 ;; Markdown
 (autoload 'markdown-mode "markdown-mode"
