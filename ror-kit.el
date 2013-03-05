@@ -6,6 +6,8 @@
   (when (not (package-installed-p p))
     (package-install p)))
 
+;; recommend install rbenv if you install rbenv as ruby version manager
+
 ;; Rhtml Mode
 (require 'rhtml-mode)
 (add-to-list 'auto-mode-alist '("\\.erb\\'" . rhtml-mode))
