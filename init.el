@@ -25,6 +25,7 @@
 
 (add-to-list 'load-path (concat default-directory "plugin/Enhanced-Ruby-Mode"))
 (require 'ruby-mode)
+(add-hook 'ruby-mode-hook 'rinari-minor-mode)
 ;; all ruby configuration must after the above code
 ;; group of useful RoR plugins
 (load "ror-kit.el")
