@@ -1,4 +1,4 @@
-;; Add smart-tab
+;; install smart-tab from el-get
 (require 'smart-tab)
 (global-smart-tab-mode 1)
 ;; smart-tab make yas hotkey disworked. so we remap yas hotkey
