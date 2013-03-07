@@ -11,7 +11,7 @@
 ;; Enh-ruby-mode was autoinstalled by el-get, it conflicts with ruby-mode(1.1) in elpa-packages
 (add-hook 'enh-ruby-mode-hook 'rinari-minor-mode)
 
-;; Rhtml Mode
+;; Rhtml Mode installed from el-get
 (require 'rhtml-mode)
 (add-to-list 'auto-mode-alist '("\\.erb\\'" . rhtml-mode))
 (add-to-list 'auto-mode-alist '("\\.rjs\\'" . rhtml-mode))
