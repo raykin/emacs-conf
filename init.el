@@ -1,3 +1,17 @@
+;; setup el-get
+(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
+
+(unless (require 'el-get nil 'noerror)
+  (with-current-buffer
+      (url-retrieve-synchronously
+       "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
+    (let (el-get-master-branch)
+      (goto-char (point-max))
+      (eval-print-last-sexp))))
+
+(el-get 'sync)
+;; END setup el-get
+
 (require 'package)
 
 (add-to-list 'package-archives
@@ -23,10 +37,6 @@
 ;; custom config, most are global lib and configuration
 (load "custom.el")
 
-(add-to-list 'load-path (concat default-directory "plugin/Enhanced-Ruby-Mode"))
-(require 'ruby-mode)
-(add-hook 'ruby-mode-hook 'rinari-minor-mode)
-;; all ruby configuration must after the above code
 ;; group of useful RoR plugins
 (load "ror-kit.el")
 (load "custom_rinari.el")
