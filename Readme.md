@@ -43,3 +43,5 @@ So far so good.
 6. Add Textmate-mode configure.
 
 7. remove ruby-electric on ror-kit branch. cause it conflict with smart-tab.
+
+8. Setup el-get. And replace ruby-mode with enh-ruby-mode(it is a fork of Enhanced-Ruby-Mode but more active)
