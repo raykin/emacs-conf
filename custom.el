@@ -49,8 +49,10 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (add-hook 'prog-mode-hook 'turn-off-auto-fill)
 
-(require 'color-theme-gruber-darker)
-(color-theme-gruber-darker)
+;;(require 'color-theme-gruber-darker)
+;;(color-theme-gruber-darker)
+;;(color-theme-tomorrow)
+(color-theme-railscasts)
 
 ;; Setting Emacs Split to Horizontal
 (setq split-height-threshold 0)

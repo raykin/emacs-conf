@@ -9,7 +9,7 @@
       (goto-char (point-max))
       (eval-print-last-sexp))))
 
-(el-get 'sync)
+(el-get 'sync '(load-relative smart-tab coffee-mode rhtml-mode color-theme-tomorrow))
 ;; END setup el-get
 
 (require 'package)
@@ -22,7 +22,7 @@
   (package-refresh-contents))
 
 ;; Add in your own as you wish:
-(defvar my-packages '(starter-kit starter-kit-lisp starter-kit-bindings starter-kit-js starter-kit-ruby mode-compile session markdown-mode color-theme color-theme-gruber-darker yasnippet-bundle textmate)
+(defvar my-packages '(starter-kit starter-kit-lisp starter-kit-bindings starter-kit-js starter-kit-ruby mode-compile session markdown-mode yasnippet-bundle textmate)
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p my-packages)
@@ -30,16 +30,17 @@
     (package-install p)))
 
 ;; Add loading path
-(add-to-list 'load-path default-directory)
-(add-to-list 'load-path (concat default-directory "plugin"))
-(add-to-list 'load-path (concat default-directory "plugin/rhtml/"))
+;;(add-to-list 'load-path default-directory)
+
+;; must install emacs-load-relative from el-get
 
 ;; custom config, most are global lib and configuration
-(load "custom.el")
+(require 'load-relative)
+(load-relative "./custom.el")
 
 ;; group of useful RoR plugins
-(load "ror-kit.el")
-(load "custom_rinari.el")
+(load-relative "./ror-kit.el")
+(load-relative "./custom_rinari.el")
 
 ;; my start working dir. change it to your favorite
 ;; put it at the end of file cause it can change emacs variables, ex: default-directory
