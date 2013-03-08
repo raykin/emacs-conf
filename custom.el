@@ -11,7 +11,7 @@
 (setq desktop-globals-to-save '(desktop-missing-file-warning))
 
 ;; Add custom yasnippet
-(yas/define-snippets 'enh-ruby-mode
+(yas/define-snippets 'ruby-mode
                      '(("fs" ", :focus => true " ", focus => true" nil "control structure" nil nil nil)
                        ("d" "def ${name}\n  $0\nend\n " "def ... end " nil "control structure" nil nil nil)
                        ("do" "do\n$0\nend\n " "do ... end " nil "control structure" nil nil nil)
@@ -49,10 +49,8 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (add-hook 'prog-mode-hook 'turn-off-auto-fill)
 
-;;(require 'color-theme-gruber-darker)
-;;(color-theme-gruber-darker)
-;;(color-theme-tomorrow)
-(color-theme-railscasts)
+(color-theme-tomorrow-night-bright)
+;;(color-theme-railscasts)
 
 ;; Setting Emacs Split to Horizontal
 (setq split-height-threshold 0)

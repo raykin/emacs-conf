@@ -9,9 +9,10 @@
       (goto-char (point-max))
       (eval-print-last-sexp))))
 
-(el-get 'sync '(load-relative smart-tab coffee-mode rhtml-mode color-theme-tomorrow))
+(el-get 'sync '(load-relative smart-tab coffee-mode rhtml-mode color-theme-tomorrow color-theme-railscasts autopair sass-mode yaml-mode rinari inf-ruby))
 ;; END setup el-get
 
+;; Load ELPA package
 (require 'package)
 
 (add-to-list 'package-archives
@@ -28,13 +29,8 @@
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))
+;; END load elpa package
 
-;; Add loading path
-;;(add-to-list 'load-path default-directory)
-
-;; must install emacs-load-relative from el-get
-
-;; custom config, most are global lib and configuration
 (require 'load-relative)
 (load-relative "./custom.el")
 

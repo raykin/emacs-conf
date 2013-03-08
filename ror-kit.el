@@ -1,25 +1,16 @@
-;; install necessary packages
-(defvar ror-packages '(autopair sass-mode yaml-mode rinari)
-  "A list of packages to ensure are installed at launch.")
-
-(dolist (p ror-packages)
-  (when (not (package-installed-p p))
-    (package-install p)))
-
-;; recommend install rbenv if you install rbenv as ruby version manager
-
 ;; Enh-ruby-mode was autoinstalled by el-get, it conflicts with ruby-mode(1.1) in elpa-packages
-(add-hook 'enh-ruby-mode-hook 'rinari-minor-mode)
+;; (add-hook 'enh-ruby-mode-hook 'rinari-minor-mode)
+(add-hook 'ruby-mode-hook 'rinari-minor-mode)
 
-;; Rhtml Mode installed from el-get
+;; custom Ruby Mode
+(add-hook 'ruby-mode-hook 'turn-off-auto-fill)
+
+;; Rhtml mode
 (require 'rhtml-mode)
 (add-to-list 'auto-mode-alist '("\\.erb\\'" . rhtml-mode))
 (add-to-list 'auto-mode-alist '("\\.rjs\\'" . rhtml-mode))
 (add-hook 'rhtml-mode-hook 'rinari-minor-mode)
 (add-hook 'rhtml-mode-hook 'turn-off-auto-fill)
-
-;; custom Ruby Mode
-(add-hook 'ruby-mode-hook 'turn-off-auto-fill)
 
 ;; autopair
 (require 'autopair)
