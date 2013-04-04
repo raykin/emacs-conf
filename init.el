@@ -9,7 +9,7 @@
       (goto-char (point-max))
       (eval-print-last-sexp))))
 
-(el-get 'sync '(load-relative smart-tab coffee-mode rhtml-mode color-theme-tomorrow color-theme-railscasts autopair sass-mode yaml-mode rinari inf-ruby))
+(el-get 'sync '(load-relative smart-tab coffee-mode rhtml-mode color-theme-tomorrow color-theme-railscasts autopair sass-mode yaml-mode rinari inf-ruby jade-mode))
 ;; END setup el-get
 
 ;; Load ELPA package
