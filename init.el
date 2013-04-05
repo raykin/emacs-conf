@@ -9,7 +9,7 @@
       (goto-char (point-max))
       (eval-print-last-sexp))))
 
-(el-get 'sync '(load-relative smart-tab coffee-mode rhtml-mode color-theme-tomorrow color-theme-railscasts autopair sass-mode yaml-mode rinari inf-ruby jade-mode))
+(el-get 'sync '(load-relative smart-tab coffee-mode rhtml-mode color-theme-tomorrow color-theme-railscasts autopair sass-mode yaml-mode inf-ruby jade-mode))
 ;; END setup el-get
 
 ;; Load ELPA package
@@ -23,7 +23,7 @@
   (package-refresh-contents))
 
 ;; Add in your own as you wish:
-(defvar my-packages '(starter-kit starter-kit-lisp starter-kit-bindings starter-kit-js starter-kit-ruby mode-compile session markdown-mode yasnippet-bundle textmate)
+(defvar my-packages '(starter-kit starter-kit-lisp starter-kit-bindings starter-kit-js starter-kit-ruby mode-compile session markdown-mode yasnippet-bundle textmate rinari)
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p my-packages)
