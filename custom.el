@@ -5,6 +5,14 @@
 ;; see more on http://blog.binchen.org/?p=357
 (global-set-key (kbd "M-p") 'yas/expand)
 
+;; jade mode
+(load-relative "vendor/jade-mode/sws-mode.el")
+(load-relative "vendor/jade-mode/jade-mode.el")
+(require 'sws-mode)
+(require 'jade-mode)
+(add-to-list 'auto-mode-alist '("\\.styl$" . sws-mode))
+(add-to-list 'auto-mode-alist '("\\.jade$" . jade-mode))
+
 ;; session mode
 (require 'session)
 (add-hook 'after-init-hook 'session-initialize)

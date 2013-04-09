@@ -47,3 +47,5 @@ So far so good.
 8. Setup el-get. And replace ruby-mode with enh-ruby-mode(it is a fork of Enhanced-Ruby-Mode but more active)
 
 9. Install load-relative. Reinstall some lib by el-get. Remove enh-ruby-mode cause it seems conflicts with color-theme.
+
+10. Install jade-mode manually cause package installation was failed.
