@@ -1,6 +1,6 @@
 ;; Enh-ruby-mode was autoinstalled by el-get, it conflicts with ruby-mode(1.1) in elpa-packages
 ;; (add-hook 'enh-ruby-mode-hook 'rinari-minor-mode)
-(add-hook 'ruby-mode-hook 'rinari-minor-mode)
+;;(add-hook 'ruby-mode-hook 'rinari-minor-mode)
 
 ;; custom Ruby Mode
 (add-hook 'ruby-mode-hook 'turn-off-auto-fill)

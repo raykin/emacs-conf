@@ -9,7 +9,7 @@
       (goto-char (point-max))
       (eval-print-last-sexp))))
 
-(el-get 'sync '(load-relative smart-tab coffee-mode rhtml-mode color-theme-tomorrow color-theme-railscasts autopair sass-mode yaml-mode inf-ruby jade-mode))
+(el-get 'sync '(load-relative smart-tab coffee-mode rhtml-mode color-theme-tomorrow color-theme-railscasts autopair sass-mode yaml-mode))
 ;; END setup el-get
 
 ;; Load ELPA package
@@ -44,3 +44,5 @@
 
 ;; remove autofill which was defined in emacs-starter-kit
 (remove-hook 'prog-mode-hook 'esk-local-comment-auto-fill)
+;; cause inf-ruby-keys not exist
+(remove-hook 'ruby-mode-hook 'inf-ruby-keys)
