@@ -12,6 +12,9 @@
 (add-hook 'rhtml-mode-hook 'rinari-minor-mode)
 (add-hook 'rhtml-mode-hook 'turn-off-auto-fill)
 
+;; Slim mode
+(add-hook 'slim-mode-hook 'rinari-minor-mode)
+
 ;; autopair
 (require 'autopair)
 (autopair-global-mode) ;; to enable in all buffers
