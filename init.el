@@ -38,11 +38,25 @@
 (load-relative "./ror-kit.el")
 (load-relative "./custom_rinari.el")
 
+;; group of useful JS plugins
+;; tern not worked
+;; (load-relative "./vendor/tern/emacs/tern.el")
+;; (require 'tern-mode)
+;; (autoload 'tern-mode "tern.el" nil t)
+;; (add-hook 'js-mode-hook (lambda () (tern-mode t)))
+
 ;; my start working dir. change it to your favorite
 ;; put it at the end of file cause it can change emacs variables, ex: default-directory
-(cd "~/studio/ticdev")
+(cd "~/studio/deltux")
 
 ;; remove autofill which was defined in emacs-starter-kit
 (remove-hook 'prog-mode-hook 'esk-local-comment-auto-fill)
 ;; cause inf-ruby-keys not exist
 (remove-hook 'ruby-mode-hook 'inf-ruby-keys)
+
+
+;; try fix bug of https://bugs.launchpad.net/ubuntu/+source/emacs24/+bug/1175422, not worked on my computer
+(setq vc-handled-backends ())
+
+;; So no auto-fill in HTML mode and other Text mode
+(remove-hook 'text-mode-hook 'turn-on-auto-fill)
