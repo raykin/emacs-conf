@@ -23,7 +23,7 @@
                      '(("fs" ", :focus => true " ", focus => true" nil "control structure" nil nil nil)
                        ("d" "def ${name}\n  $0\nend\n " "def ... end " nil "control structure" nil nil nil)
                        ("do" "do\n$0\nend\n " "do ... end " nil "control structure" nil nil nil)
-                       ("dop" "do \|${e}\| \n \nend\n " "do ... end " nil "control structure" nil nil nil)
+                       ("doe" "do \|${e}\| \n \nend\n " "do ... end " nil "control structure" nil nil nil)
                        ("inj" "inject\(${e}\) do \|memo, e\| \n memo \nend " "do ... end " nil "control structure" nil nil nil)
                        ))
 (yas/define-snippets 'rhtml-mode
