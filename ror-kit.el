@@ -6,6 +6,7 @@
 (add-hook 'ruby-mode-hook 'turn-off-auto-fill)
 (add-to-list 'auto-mode-alist '("\\.json.ruby\\'" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.rabl\\'" . ruby-mode))
+(add-hook 'ruby-mode-hook 'robe-mode)
 
 ;; Rhtml mode
 (require 'rhtml-mode)
