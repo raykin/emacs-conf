@@ -9,8 +9,10 @@
       (goto-char (point-max))
       (eval-print-last-sexp))))
 
-(el-get 'sync '(load-relative smart-tab coffee-mode rhtml-mode color-theme-tomorrow color-theme-railscasts autopair sass-mode yaml-mode slim-mode))
+(el-get 'sync '(load-relative smart-tab coffee-mode rhtml-mode color-theme-tomorrow color-theme-railscasts autopair sass-mode yaml-mode slim-mode mode-compile session markdown-mode textmate robe-mode inf-ruby php-mode imenu+))
 ;; END setup el-get
+
+;; TODO: has an error that Package assoc is obsolete, but didnt know which package
 
 ;; Load ELPA package
 (require 'package)
@@ -30,7 +32,7 @@
               ))
 
 ;; Add in your own as you wish:
-(defvar my-packages '(starter-kit starter-kit-lisp starter-kit-bindings starter-kit-js starter-kit-ruby mode-compile session markdown-mode yasnippet-bundle textmate rinari)
+(defvar my-packages '(starter-kit starter-kit-lisp starter-kit-bindings starter-kit-js starter-kit-ruby yasnippet-bundle)
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p my-packages)
@@ -60,7 +62,6 @@
 (remove-hook 'prog-mode-hook 'esk-local-comment-auto-fill)
 ;; cause inf-ruby-keys not exist
 (remove-hook 'ruby-mode-hook 'inf-ruby-keys)
-
 
 ;; try fix bug of https://bugs.launchpad.net/ubuntu/+source/emacs24/+bug/1175422, not worked on my computer
 (setq vc-handled-backends ())

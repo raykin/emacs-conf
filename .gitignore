@@ -4,3 +4,5 @@ places
 el-get/*
 eshell/*
 session\.*
+url/cookies
+.session

@@ -7,6 +7,7 @@
 (add-to-list 'auto-mode-alist '("\\.json.ruby\\'" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.rabl\\'" . ruby-mode))
 (add-hook 'ruby-mode-hook 'robe-mode)
+(add-hook 'ruby-mode-hook 'rinari-minor-mode)
 
 ;; Rhtml mode
 (require 'rhtml-mode)
