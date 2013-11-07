@@ -9,7 +9,7 @@
       (goto-char (point-max))
       (eval-print-last-sexp))))
 
-(el-get 'sync '(load-relative smart-tab coffee-mode rhtml-mode color-theme-tomorrow color-theme-railscasts autopair sass-mode yaml-mode slim-mode mode-compile session markdown-mode textmate robe-mode inf-ruby php-mode imenu+))
+(el-get 'sync '(load-relative smart-tab coffee-mode rhtml-mode color-theme-tomorrow color-theme-railscasts autopair sass-mode yaml-mode slim-mode mode-compile session markdown-mode textmate robe-mode php-mode imenu+))
 ;; END setup el-get
 
 ;; TODO: has an error that Package assoc is obsolete, but didnt know which package
