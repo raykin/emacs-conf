@@ -49,3 +49,5 @@ So far so good.
 9. Install load-relative. Reinstall some lib by el-get. Remove enh-ruby-mode cause it seems conflicts with color-theme.
 
 10. Install jade-mode manually cause package installation was failed.
+
+11. Merge robe-mode which install robe-mode and cleanup el-get and elpa packages.
