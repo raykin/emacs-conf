@@ -74,8 +74,8 @@
 (set-face-attribute 'default nil :height 170)
 
 ;; Add Transparency script
-(set-frame-parameter (selected-frame) 'alpha '(85 50))
-(add-to-list 'default-frame-alist '(alpha 85 50))
+(set-frame-parameter (selected-frame) 'alpha '(100 100))
+;;(add-to-list 'default-frame-alist '(alpha 85 50))
 
 (eval-when-compile (require 'cl))
 (defun toggle-transparency ()
