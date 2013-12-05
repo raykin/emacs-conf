@@ -9,6 +9,10 @@
 (add-hook 'ruby-mode-hook 'robe-mode)
 (add-hook 'ruby-mode-hook 'rinari-minor-mode)
 
+;; load rbenv mode
+(load-relative "./vendor/rbenv.el/rbenv")
+(global-rbenv-mode)
+
 ;; Rhtml mode
 (require 'rhtml-mode)
 (add-to-list 'auto-mode-alist '("\\.erb\\'" . rhtml-mode))
