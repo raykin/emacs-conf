@@ -6,3 +6,5 @@ eshell/*
 session\.*
 url/cookies
 .session
+
+projectile-bookmarks.eld

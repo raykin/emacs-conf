@@ -32,7 +32,7 @@
               ))
 
 ;; Add in your own as you wish:
-(defvar my-packages '(starter-kit starter-kit-lisp starter-kit-bindings starter-kit-js starter-kit-ruby yasnippet-bundle)
+(defvar my-packages '(starter-kit starter-kit-lisp starter-kit-bindings starter-kit-js starter-kit-ruby yasnippet-bundle projectile-rails)
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p my-packages)
@@ -45,7 +45,7 @@
 
 ;; group of useful RoR plugins
 (load-relative "./ror-kit.el")
-(load-relative "./custom_rinari.el")
+;;(load-relative "./custom_rinari.el")
 
 ;; group of useful JS plugins
 ;; tern not worked

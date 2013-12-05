@@ -7,21 +7,28 @@
 (add-to-list 'auto-mode-alist '("\\.json.ruby\\'" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.rabl\\'" . ruby-mode))
 (add-hook 'ruby-mode-hook 'robe-mode)
-(add-hook 'ruby-mode-hook 'rinari-minor-mode)
+(add-hook 'ruby-mode-hook 'projectile-mode)
+(add-hook 'ruby-mode-hook 'projectile-rails-on)
 
 ;; load rbenv mode
 (load-relative "./vendor/rbenv.el/rbenv")
-(global-rbenv-mode)
+(add-hook 'ruby-mode-hook 'global-rbenv-mode)
+;; this will remove the colors
+(setq rbenv-modeline-function 'rbenv--modeline-plain)
+
+;; custom projectile-rails mode
+(custom-set-variables
+ '(projectile-rails-keymap-prefix (kbd "M-r")))
 
 ;; Rhtml mode
 (require 'rhtml-mode)
 (add-to-list 'auto-mode-alist '("\\.erb\\'" . rhtml-mode))
 (add-to-list 'auto-mode-alist '("\\.rjs\\'" . rhtml-mode))
-(add-hook 'rhtml-mode-hook 'rinari-minor-mode)
+(add-hook 'rhtml-mode-hook 'projectile-rails-on)
 (add-hook 'rhtml-mode-hook 'turn-off-auto-fill)
 
 ;; Slim mode
-(add-hook 'slim-mode-hook 'rinari-minor-mode)
+(add-hook 'slim-mode-hook 'projectile-rails-on)
 
 ;; autopair
 (require 'autopair)
@@ -48,3 +55,8 @@
 (eval-after-load 'rhtml-mode
   '(progn
      (define-key rhtml-mode-map (kbd "C-l") " => ")))
+
+;; coffee script
+(require 'coffee-mode)
+(setq coffee-tab-width 2)
+(add-hook 'coffee-mode-hook 'projectile-rails-on)
