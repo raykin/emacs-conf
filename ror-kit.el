@@ -60,3 +60,26 @@
 (require 'coffee-mode)
 (setq coffee-tab-width 2)
 (add-hook 'coffee-mode-hook 'projectile-rails-on)
+
+;; Hide Show mode
+(defun toggle-selective-display (column)
+      (interactive "P")
+      (set-selective-display
+       (or column
+           (unless selective-display
+             (1+ (current-column))))))
+
+(defun toggle-hiding (column)
+      (interactive "P")
+      (if hs-minor-mode
+          (if (condition-case nil
+                  (hs-toggle-hiding)
+                (error t))
+              (hs-show-all))
+        (toggle-selective-display column)))
+
+(global-set-key (kbd "C-,") 'toggle-hiding) ;; seems not worked in hs-minor-mode?
+(global-set-key (kbd "C-.") 'toggle-selective-display) ;; the fold codes work, but not work great. cause it fold all codes once you trigger it
+(add-hook 'ruby-mode-hook 'hs-minor-mode)
+
+;;
