@@ -19,6 +19,7 @@
 ;; custom projectile-rails mode
 (custom-set-variables
  '(projectile-rails-keymap-prefix (kbd "M-r")))
+(global-set-key (kbd "M-g") 'projectile-grep) ;; why failed?
 
 ;; Rhtml mode
 (require 'rhtml-mode)
