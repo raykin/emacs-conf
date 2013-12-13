@@ -1,8 +1,11 @@
 ;; install smart-tab from el-get
 (require 'smart-tab)
 (global-smart-tab-mode 1)
+
 ;; smart-tab make yas hotkey disworked. so we remap yas hotkey
 ;; see more on http://blog.binchen.org/?p=357
+(require 'yasnippet)
+(yas-global-mode 1)
 (global-set-key (kbd "M-p") 'yas/expand)
 
 ;; jade mode
@@ -18,21 +21,6 @@
 (add-hook 'after-init-hook 'session-initialize)
 (setq desktop-globals-to-save '(desktop-missing-file-warning))
 
-;; Add custom yasnippet
-(yas/define-snippets 'ruby-mode
-                     '(("fs" ", :focus => true " ", focus => true" nil "control structure" nil nil nil)
-                       ("d" "def ${name}\n  $0\nend\n " "def ... end " nil "control structure" nil nil nil)
-                       ("do" "do\n$0\nend\n " "do ... end " nil "control structure" nil nil nil)
-                       ("doe" "do \|${e}\| \n \nend\n " "do ... end " nil "control structure" nil nil nil)
-                       ("inj" "inject\(${e}\) do \|memo, e\| \n memo \nend " "do ... end " nil "control structure" nil nil nil)
-                       ))
-(yas/define-snippets 'rhtml-mode
-                     '(("5" "<% $0 %>" "<% %>" nil "control structure" nil nil nil)
-                       ("54" "<%= $0 %>" "<%= %>" nil "control structure" nil nil nil)
-                       ("53" "<%# $0 %>" "<%# %>" nil "control structure" nil nil nil)
-                       ("e" "<% end %>" "<%= %>" nil "control structure" nil nil nil)
-                       ("tab" "<ul class='nav nav-tabs'>\n$0\n</ul>" "<%= %>" nil "control structure" nil nil nil)
-                       ))
 
 
 ;; Markdown
