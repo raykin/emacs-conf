@@ -10,10 +10,25 @@
 (add-hook 'ruby-mode-hook 'projectile-mode)
 (add-hook 'ruby-mode-hook 'projectile-rails-on)
 
+;; Rake files are ruby, too, as are gemspecs, rackup files, etc.
+(add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.thor$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.gemspec$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.ru$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Rakefile$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Thorfile$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Gemfile$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Capfile$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Vagrantfile$" . ruby-mode))
+
+;; We never want to edit Rubinius bytecode or MacRuby binaries
+(add-to-list 'completion-ignored-extensions ".rbc")
+(add-to-list 'completion-ignored-extensions ".rbo")
+
 ;; load rbenv mode
 (load-relative "./vendor/rbenv.el/rbenv")
 (add-hook 'ruby-mode-hook 'global-rbenv-mode)
-;; this will remove the colors
+;; this will remove the colors of rbenv version string
 (setq rbenv-modeline-function 'rbenv--modeline-plain)
 
 ;; custom projectile-rails mode
