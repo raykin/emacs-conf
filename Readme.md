@@ -51,3 +51,5 @@ So far so good.
 10. Install jade-mode manually cause package installation was failed.
 
 11. Merge robe-mode which install robe-mode and cleanup el-get and elpa packages.
+
+12. Add Projectile-rails mode. It replace the Rinari mode.
