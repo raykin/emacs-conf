@@ -9,7 +9,23 @@
       (goto-char (point-max))
       (eval-print-last-sexp))))
 
-(el-get 'sync '(load-relative smart-tab coffee-mode rhtml-mode color-theme-tomorrow color-theme-railscasts autopair sass-mode yaml-mode slim-mode mode-compile session markdown-mode textmate robe-mode php-mode imenu+ wanderlust))
+(el-get 'sync '(load-relative
+                smart-tab
+                coffee-mode
+                rhtml-mode
+                color-theme-railscasts
+                autopair
+                sass-mode
+                yaml-mode
+                slim-mode
+                mode-compile
+                session
+                markdown-mode
+                textmate
+                robe-mode ;; Jump to ruby method definition
+                php-mode
+                imenu+
+                wanderlust))
 ;; END setup el-get
 
 ;; TODO: has an error that Package assoc is obsolete, but didnt know which package
@@ -32,8 +48,16 @@
               ))
 
 ;; Add in your own as you wish:
-(defvar my-packages '(starter-kit starter-kit-lisp starter-kit-bindings starter-kit-js rainbow-mode yasnippet projectile-rails)
+(defvar my-packages '(starter-kit
+                      starter-kit-lisp
+                      starter-kit-bindings
+                      starter-kit-js
+                      rainbow-mode ;; give color on css file. need background color to be white
+                      yasnippet
+                      projectile-rails
+                      soft-morning-theme)
   "A list of packages to ensure are installed at launch.")
+
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
