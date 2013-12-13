@@ -69,7 +69,6 @@
 
 ;; group of useful RoR plugins
 (load-relative "./ror-kit.el")
-;;(load-relative "./custom_rinari.el")
 
 ;; group of useful JS plugins
 ;; tern not worked

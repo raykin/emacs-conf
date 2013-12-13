@@ -1,6 +1,4 @@
 ;; Enh-ruby-mode was autoinstalled by el-get, it conflicts with ruby-mode(1.1) in elpa-packages
-;; (add-hook 'enh-ruby-mode-hook 'rinari-minor-mode)
-;;(add-hook 'ruby-mode-hook 'rinari-minor-mode)
 
 ;; custom Ruby Mode
 (add-hook 'ruby-mode-hook 'turn-off-auto-fill)
@@ -26,6 +24,7 @@
 (add-to-list 'completion-ignored-extensions ".rbo")
 
 ;; load rbenv mode
+;; TODO: emacs-powerline override rbenv version msg on modeline
 (load-relative "./vendor/rbenv.el/rbenv")
 (add-hook 'ruby-mode-hook 'global-rbenv-mode)
 ;; this will remove the colors of rbenv version string
@@ -97,5 +96,3 @@
 (global-set-key (kbd "C-,") 'toggle-hiding) ;; seems not worked in hs-minor-mode?
 (global-set-key (kbd "C-.") 'toggle-selective-display) ;; the fold codes work, but not work great. cause it fold all codes once you trigger it
 (add-hook 'ruby-mode-hook 'hs-minor-mode)
-
-;;

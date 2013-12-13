@@ -46,8 +46,9 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (add-hook 'prog-mode-hook 'turn-off-auto-fill)
 
-(color-theme-tomorrow-night-bright)
 ;;(color-theme-railscasts)
+;;(load-theme 'soft-morning)
+(load-theme 'wombat)
 
 ;; Setting Emacs Split to Horizontal
 (setq split-height-threshold 0)
@@ -69,3 +70,9 @@
       (set-frame-parameter nil 'alpha '(100 100))
     (set-frame-parameter nil 'alpha '(85 50))))
 (global-set-key (kbd "C-c t") 'toggle-transparency)
+
+;; emacs-powerline mode
+(load-relative "./vendor/emacs-powerline/powerline.el")
+(custom-set-faces
+ '(mode-line ((t (:foreground "#030303" :background "#bdbdbd" :box nil))))
+ '(mode-line-inactive ((t (:foreground "#f9f9f9" :background "#666666" :box nil)))))
