@@ -40,6 +40,7 @@
 
 ;; list of global key
 (global-set-key   [f7]   'rename-buffer)
+(global-set-key   [f6]   'goto-line)
 
 ;; list of global hook
 ;; how to remove this hook on markdown-mode
