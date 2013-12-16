@@ -1,0 +1,6 @@
+# name: do ... end
+# key: dod
+# --
+do
+  $0
+end
