@@ -54,8 +54,7 @@
                       starter-kit-js
                       rainbow-mode ;; give color on css file. need background color to be white
                       yasnippet
-                      projectile-rails
-                      soft-morning-theme)
+                      projectile-rails)
   "A list of packages to ensure are installed at launch.")
 
 
@@ -83,6 +82,8 @@
 
 ;; remove autofill which was defined in emacs-starter-kit
 (remove-hook 'prog-mode-hook 'esk-local-comment-auto-fill)
+;; remove hl-line-mode hook which was defined in emacs-starter-kit
+(remove-hook 'prog-mode-hook 'esk-turn-on-hl-line-mode)
 ;; cause inf-ruby-keys not exist
 (remove-hook 'ruby-mode-hook 'inf-ruby-keys)
 

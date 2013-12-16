@@ -36,7 +36,7 @@
 (global-set-key (kbd "M-T") 'textmate-goto-symbol)
 
 ;; list of global mode
-(global-linum-mode 1)
+;;(global-linum-mode 1)
 
 ;; list of global key
 (global-set-key   [f7]   'rename-buffer)
@@ -47,7 +47,8 @@
 (add-hook 'prog-mode-hook 'turn-off-auto-fill)
 
 ;;(color-theme-railscasts)
-;;(load-theme 'soft-morning)
+;;(load-theme 'soft-morning t)
+;;(load-theme 'zenburn t)
 (load-theme 'wombat)
 
 ;; Setting Emacs Split to Horizontal
@@ -76,3 +77,13 @@
 (custom-set-faces
  '(mode-line ((t (:foreground "#030303" :background "#bdbdbd" :box nil))))
  '(mode-line-inactive ((t (:foreground "#f9f9f9" :background "#666666" :box nil)))))
+
+;; try Add Git Status in mode-line but failed
+;; (defadvice vc-git-mode-line-string (after plus-minus (file) compile activate)
+;;   (setq ad-return-value
+;;     (concat ad-return-value
+;;             (let ((plus-minus (vc-git--run-command-string
+;;                                file "diff" "--numstat" "--")))
+;;               (and plus-minus
+;;                    (string-match "^\\([0-9]+\\)\t\\([0-9]+\\)\t" plus-minus)
+;;                    (format " +%s-%s" (match-string 1 plus-minus) (match-string 2 plus-minus)))))))
