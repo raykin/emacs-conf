@@ -2,6 +2,23 @@
 (require 'smart-tab)
 (global-smart-tab-mode 1)
 
+;; smartparens
+(require 'smartparens-config)
+(require 'smartparens-ruby)
+(smartparens-global-mode)
+(show-smartparens-global-mode t)
+(sp-with-modes '(rhtml-mode)
+               (sp-local-pair "<" ">")
+               (sp-local-pair "<%" "%>"))
+
+;; flyspell
+(require 'flyspell)
+(setq flyspell-issue-message-flg nil)
+(add-hook 'prog-mode-hook
+          (lambda () (flyspell-prog-mode)))
+;; flyspell mode breaks auto-complete mode without this.
+;; (ac-flyspell-workaround)
+
 ;; smart-tab make yas hotkey disworked. so we remap yas hotkey
 ;; see more on http://blog.binchen.org/?p=357
 (require 'yasnippet)
@@ -20,8 +37,6 @@
 (require 'session)
 (add-hook 'after-init-hook 'session-initialize)
 (setq desktop-globals-to-save '(desktop-missing-file-warning))
-
-
 
 ;; Markdown
 (autoload 'markdown-mode "markdown-mode"

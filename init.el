@@ -25,7 +25,8 @@
                 robe-mode ;; Jump to ruby method definition
                 php-mode
                 imenu+
-                wanderlust))
+                wanderlust
+                smartparens))
 ;; END setup el-get
 
 ;; TODO: has an error that Package assoc is obsolete, but didnt know which package
@@ -92,3 +93,13 @@
 
 ;; So no auto-fill in HTML mode and other Text mode
 (remove-hook 'text-mode-hook 'turn-on-auto-fill)
+
+(set-cursor-color "orange")
+
+(setq dotfiles-dir (file-name-directory (or load-file-name (buffer-file-name))))
+
+(defun recompile-init ()
+  "Byte-compile all your dotfiles again."
+  (interactive)
+  ;; TODO: remove elpa-to-submit once everything's submitted.
+  (byte-recompile-directory dotfiles-dir 0))
