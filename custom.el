@@ -47,7 +47,7 @@
 ;; Textmate mode
 (textmate-mode t)
 (global-set-key (kbd "M-/") 'comment-or-uncomment-region-or-line)
-(global-set-key (kbd "M-t") 'textmate-goto-file)
+;; (global-set-key (kbd "M-t") 'textmate-goto-file) ;; M-t can be used as transpose-words
 (global-set-key (kbd "M-T") 'textmate-goto-symbol)
 
 ;; list of global mode
@@ -103,3 +103,25 @@
 ;;               (and plus-minus
 ;;                    (string-match "^\\([0-9]+\\)\t\\([0-9]+\\)\t" plus-minus)
 ;;                    (format " +%s-%s" (match-string 1 plus-minus) (match-string 2 plus-minus)))))))
+
+
+;; Hide Show mode
+(defun toggle-selective-display (column)
+      (interactive "P")
+      (set-selective-display
+       (or column
+           (unless selective-display
+             (1+ (current-column))))))
+
+(defun toggle-hiding (column)
+      (interactive "P")
+      (if hs-minor-mode
+          (if (condition-case nil
+                  (hs-toggle-hiding)
+                (error t))
+              (hs-show-all))
+        (toggle-selective-display column)))
+
+(global-set-key (kbd "C-,") 'toggle-hiding) ;; seems not worked in hs-minor-mode?
+(global-set-key (kbd "C-.") 'toggle-selective-display) ;; the fold codes work, but not work great. cause it fold all codes once you trigger it
+(add-hook 'ruby-mode-hook 'hs-minor-mode)

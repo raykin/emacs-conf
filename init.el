@@ -26,7 +26,9 @@
                 php-mode
                 imenu+
                 wanderlust
-                smartparens))
+                smartparens
+                iy-go-to-char
+                key-chord))
 ;; END setup el-get
 
 ;; TODO: has an error that Package assoc is obsolete, but didnt know which package
@@ -55,7 +57,9 @@
                       starter-kit-js
                       rainbow-mode ;; give color on css file. need background color to be white
                       yasnippet
-                      projectile-rails)
+                      projectile-rails
+                      vcard
+                      )
   "A list of packages to ensure are installed at launch.")
 
 
@@ -103,3 +107,11 @@
   (interactive)
   ;; TODO: remove elpa-to-submit once everything's submitted.
   (byte-recompile-directory dotfiles-dir 0))
+
+(require 'key-chord)
+(key-chord-mode 1)
+(key-chord-define-global "jk" 'undo)
+
+(require 'iy-go-to-char)
+(key-chord-define-global "df" 'iy-go-to-char)
+(key-chord-define-global "ds" 'iy-go-to-char-backward)
