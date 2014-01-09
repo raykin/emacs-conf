@@ -13,7 +13,7 @@
 
 ;; flyspell
 (require 'flyspell)
-(setq flyspell-issue-message-flg nil)
+(setq flyspell-issue-message-flag nil)
 (add-hook 'prog-mode-hook
           (lambda () (flyspell-prog-mode)))
 ;; flyspell mode breaks auto-complete mode without this.

@@ -113,5 +113,5 @@
 (key-chord-define-global "jk" 'undo)
 
 (require 'iy-go-to-char)
-(key-chord-define-global "df" 'iy-go-to-char)
+(key-chord-define-global "fj" 'iy-go-to-char)
 (key-chord-define-global "ds" 'iy-go-to-char-backward)
