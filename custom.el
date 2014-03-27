@@ -26,8 +26,8 @@
 (global-set-key (kbd "M-p") 'yas/expand)
 
 ;; jade mode
-(load-relative "vendor/jade-mode/sws-mode.el")
-(load-relative "vendor/jade-mode/jade-mode.el")
+;;(load-relative "vendor/jade-mode/sws-mode.el")
+;;(load-relative "vendor/jade-mode/jade-mode.el")
 (require 'sws-mode)
 (require 'jade-mode)
 (add-to-list 'auto-mode-alist '("\\.styl$" . sws-mode))

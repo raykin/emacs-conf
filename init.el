@@ -59,6 +59,7 @@
                       yasnippet
                       projectile-rails
                       vcard
+                      jade-mode
                       )
   "A list of packages to ensure are installed at launch.")
 
