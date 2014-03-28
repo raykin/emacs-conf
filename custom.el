@@ -12,10 +12,10 @@
                (sp-local-pair "<%" "%>"))
 
 ;; flyspell
-(require 'flyspell)
-(setq flyspell-issue-message-flag nil)
-(add-hook 'prog-mode-hook
-          (lambda () (flyspell-prog-mode)))
+;; (require 'flyspell)
+;; (setq flyspell-issue-message-flag nil)
+;; (add-hook 'prog-mode-hook
+;;           (lambda () (flyspell-prog-mode)))
 ;; flyspell mode breaks auto-complete mode without this.
 ;; (ac-flyspell-workaround)
 
@@ -23,7 +23,11 @@
 ;; see more on http://blog.binchen.org/?p=357
 (require 'yasnippet)
 (yas-global-mode 1)
+(define-key yas-minor-mode-map (kbd "<tab>") nil)
+(define-key yas-minor-mode-map (kbd "TAB") nil)
 (global-set-key (kbd "M-p") 'yas/expand)
+;; since I map the expand to another key, so no need call other command
+(setq yas-fallback-behavior 'return-nil)
 
 ;; jade mode
 (load-relative "vendor/jade-mode/sws-mode.el")
@@ -50,6 +54,8 @@
 ;; (global-set-key (kbd "M-t") 'textmate-goto-file) ;; M-t can be used as transpose-words
 (global-set-key (kbd "M-T") 'textmate-goto-symbol)
 
+(global-set-key (kbd "s-v") 'scroll-other-window)
+(global-set-key (kbd "s-v") 'scroll-other-window-down)
 ;; list of global mode
 ;;(global-linum-mode 1)
 

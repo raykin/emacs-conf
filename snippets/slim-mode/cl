@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: cl
+# key: cl
+# --
+c-listattr(attr-name="$1" attr-value="$2")
+$0

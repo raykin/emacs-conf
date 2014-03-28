@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: form-error
+# expand-env: ((yas-indent-line 'fixed))
+# key: ferr
+# --
+span.text-danger(ng-show="form.$1.$blured && form.$1.$error.${2:required}") ${3:Required!}
+span.text-success(ng-show="form.$1.$valid")
+  i.fa.fa-check

@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# name: angular-input
+# expand-env: ((yas-indent-line 'fixed))
+# key: anin
+# --
+.form-group
+  label.control-label.col-sm-$11 ${2:label name}
+  .col-sm-$22
+    input.form-control(type="${3:text}" name="${4:form-name}" ng-model="${5:modal-name}.$4")
+  .col-sm-$33
+    span.text-danger(ng-bind="${6:$5.errors.$4}")
+    span.text-success(ng-show="form.$4.$valid && !$6")
+      i.fa.fa-check
+  $0

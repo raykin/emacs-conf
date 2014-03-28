@@ -43,6 +43,7 @@
 (add-hook 'rhtml-mode-hook 'turn-off-auto-fill)
 
 ;; Slim mode
+(add-hook 'slim-mode-hook 'projectile-mode)
 (add-hook 'slim-mode-hook 'projectile-rails-on)
 
 ;; autopair

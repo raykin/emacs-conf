@@ -28,7 +28,8 @@
                 wanderlust
                 smartparens
                 iy-go-to-char
-                key-chord))
+                key-chord
+                multiple-cursors))
 ;; END setup el-get
 
 ;; TODO: has an error that Package assoc is obsolete, but didnt know which package
@@ -115,3 +116,9 @@
 (require 'iy-go-to-char)
 (key-chord-define-global "fj" 'iy-go-to-char)
 (key-chord-define-global "ds" 'iy-go-to-char-backward)
+
+(require 'multiple-cursors)
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
