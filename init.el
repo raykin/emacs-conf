@@ -115,8 +115,8 @@
 (key-chord-define-global "jk" 'undo)
 
 (require 'iy-go-to-char)
-(key-chord-define-global "fj" 'iy-go-to-char)
-(key-chord-define-global "ds" 'iy-go-to-char-backward)
+(key-chord-define-global "jj" 'iy-go-to-char)
+(key-chord-define-global "vv" 'iy-go-to-char-backward)
 
 (require 'multiple-cursors)
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
