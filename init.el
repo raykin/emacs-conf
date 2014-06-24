@@ -24,7 +24,6 @@
                 session
                 markdown-mode
                 textmate
-                robe-mode ;; Jump to ruby method definition
                 php-mode
                 imenu+
                 wanderlust
@@ -63,6 +62,8 @@
                       projectile-rails
                       vcard
                       jade-mode
+                      robe ;; Jump to ruby method definition
+                      rbenv
                       )
   "A list of packages to ensure are installed at launch.")
 
@@ -87,7 +88,7 @@
 
 ;; my start working dir. change it to your favorite
 ;; put it at the end of file cause it can change emacs variables, ex: default-directory
-(cd "~/studio/deltux")
+(cd "~/studio")
 
 ;; remove autofill which was defined in emacs-starter-kit
 (remove-hook 'prog-mode-hook 'esk-local-comment-auto-fill)
@@ -125,3 +126,10 @@
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+
+(defun select-current-line ()
+  "Select the current line"
+  (interactive)
+  (end-of-line) ; move to end of line
+  (set-mark (line-beginning-position)))
+(global-set-key (kbd "C-l") 'select-current-line)

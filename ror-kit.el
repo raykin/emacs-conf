@@ -24,11 +24,24 @@
 (add-to-list 'completion-ignored-extensions ".rbo")
 
 ;; load rbenv mode
+(add-to-list 'load-path (expand-file-name "/path/to/rbenv.el/"))
+(require 'rbenv)
+(global-rbenv-mode)
 ;; TODO: emacs-powerline override rbenv version msg on modeline
 ;; (load-relative "./vendor/rbenv.el/rbenv")
 ;; (add-hook 'ruby-mode-hook 'global-rbenv-mode)
 ;; this will remove the colors of rbenv version string
 ;; (setq rbenv-modeline-function 'rbenv--modeline-plain)
+
+;;
+(defun seeing-is-believing ()
+  "Replace the current region (or the whole buffer, if none) with the output
+of seeing_is_believing."
+  (interactive)
+  (let ((beg (if (region-active-p) (region-beginning) (point-min)))
+        (end (if (region-active-p) (region-end) (point-max))))
+    (shell-command-on-region beg end "seeing_is_believing" nil 'replace)))
+(global-set-key (kbd "C-c C-c") 'seeing-is-believing)
 
 ;; custom projectile-rails mode
 (custom-set-variables
@@ -64,13 +77,14 @@
 ;; js
 (add-to-list 'auto-mode-alist '("\\.js.erb$" . js-mode))
 
+;; Deprecated
 ;; C-l inserts a hash mark
-(eval-after-load 'ruby-mode
-  '(progn
-     (define-key ruby-mode-map (kbd "C-l") " => ")))
-(eval-after-load 'rhtml-mode
-  '(progn
-     (define-key rhtml-mode-map (kbd "C-l") " => ")))
+;; (eval-after-load 'ruby-mode
+;;   '(progn
+;;      (define-key ruby-mode-map (kbd "C-l") " => ")))
+;; (eval-after-load 'rhtml-mode
+;;   '(progn
+;;      (define-key rhtml-mode-map (kbd "C-l") " => ")))
 
 ;; coffee script
 (require 'coffee-mode)
