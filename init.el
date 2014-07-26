@@ -41,16 +41,11 @@
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
 (add-to-list 'package-archives
-  '("melpa" . "http://melpa.milkbox.net/packages/") t)
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
 
 (when (not package-archive-contents)
   (package-refresh-contents))
-
-(setq exec-path
-      (append exec-path
-              '("/home/leijing/.rbenv/shims")
-              ))
 
 ;; Add in your own as you wish:
 (defvar my-packages '(starter-kit
@@ -64,6 +59,8 @@
                       jade-mode
                       robe ;; Jump to ruby method definition
                       rbenv
+                      exec-path-from-shell
+                      hlinum
                       )
   "A list of packages to ensure are installed at launch.")
 
@@ -72,6 +69,8 @@
   (when (not (package-installed-p p))
     (package-install p)))
 ;; END load elpa package
+
+(exec-path-from-shell-initialize)
 
 (require 'load-relative)
 (load-relative "./custom.el")
@@ -133,3 +132,8 @@
   (end-of-line) ; move to end of line
   (set-mark (line-beginning-position)))
 (global-set-key (kbd "C-l") 'select-current-line)
+
+(global-linum-mode)
+
+(require 'hlinum)
+(hlinum-activate)
