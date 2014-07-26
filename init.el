@@ -10,8 +10,8 @@
       (eval-print-last-sexp))))
 
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
-(el-get 'sync)
-(el-get 'sync '(load-relative
+
+(el-get 'sync '(
                 smart-tab
                 coffee-mode
                 rhtml-mode
@@ -25,11 +25,8 @@
                 markdown-mode
                 textmate
                 php-mode
-                imenu+
                 wanderlust
                 smartparens
-                iy-go-to-char
-                key-chord
                 multiple-cursors))
 ;; END setup el-get
 
@@ -52,6 +49,7 @@
                       starter-kit-lisp
                       starter-kit-bindings
                       starter-kit-js
+		      load-relative
                       rainbow-mode ;; give color on css file. need background color to be white
                       yasnippet
                       projectile-rails
@@ -61,6 +59,9 @@
                       rbenv
                       exec-path-from-shell
                       hlinum
+		      imenu+
+		      iy-go-to-char
+		      key-chord
                       )
   "A list of packages to ensure are installed at launch.")
 
