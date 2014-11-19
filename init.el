@@ -62,6 +62,7 @@
 		      imenu+
 		      iy-go-to-char
 		      key-chord
+                      minitest
                       )
   "A list of packages to ensure are installed at launch.")
 
@@ -138,3 +139,6 @@
 
 (require 'hlinum)
 (hlinum-activate)
+
+;; see http://stackoverflow.com/questions/7243155/cant-seem-to-get-rid-of-ctrl-x-ctrl-z-key-binding-in-emacs-for-minimizing-windo
+(global-set-key "\C-x\C-z" nil)
