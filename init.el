@@ -63,6 +63,7 @@
 		      iy-go-to-char
 		      key-chord
                       minitest
+                      json-mode
                       )
   "A list of packages to ensure are installed at launch.")
 
