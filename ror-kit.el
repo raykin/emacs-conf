@@ -24,7 +24,7 @@
 (add-to-list 'completion-ignored-extensions ".rbo")
 
 ;; load rbenv mode
-(add-to-list 'load-path (expand-file-name "/path/to/rbenv.el/"))
+;;(add-to-list 'load-path (expand-file-name "/path/to/rbenv.el/"))
 (require 'rbenv)
 (global-rbenv-mode)
 ;; TODO: emacs-powerline override rbenv version msg on modeline
