@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: ionic-button
+# expand-env: ((yas-indent-line 'fixed))
+# key: ibb
+# --
+button.button.button-block.button-balanced(ng-click="$1") $0

@@ -1,0 +1,6 @@
+# name: do |e|... end
+# key: doe
+# --
+do |${1:e}|
+  $0
+end

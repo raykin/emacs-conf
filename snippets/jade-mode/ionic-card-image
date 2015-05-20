@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: ionic-card-image
+# expand-env: ((yas-indent-line 'fixed))
+# key: ici
+# --
+.list.card
+  .item.item-image
+    img(src="cover.jpg")
