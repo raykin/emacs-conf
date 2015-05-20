@@ -6,6 +6,7 @@
 (add-to-list 'auto-mode-alist '("\\.rabl\\'" . ruby-mode))
 (add-hook 'ruby-mode-hook 'robe-mode)
 (add-hook 'ruby-mode-hook 'projectile-mode)
+;; (setq projectile-enable-caching t)
 (add-hook 'ruby-mode-hook 'projectile-rails-on)
 
 ;; Rake files are ruby, too, as are gemspecs, rackup files, etc.

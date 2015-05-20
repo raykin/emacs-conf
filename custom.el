@@ -68,11 +68,6 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (add-hook 'prog-mode-hook 'turn-off-auto-fill)
 
-;;(color-theme-railscasts)
-;;(load-theme 'soft-morning t)
-;;(load-theme 'zenburn t)
-(load-theme 'wombat)
-
 ;; Setting Emacs Split to Horizontal
 (setq split-height-threshold 0)
 (setq split-width-threshold nil)

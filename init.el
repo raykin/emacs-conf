@@ -55,6 +55,7 @@
                       projectile-rails
                       vcard
                       jade-mode
+                      csv-mode
                       robe ;; Jump to ruby method definition
                       rbenv
                       exec-path-from-shell
@@ -143,3 +144,7 @@
 
 ;; see http://stackoverflow.com/questions/7243155/cant-seem-to-get-rid-of-ctrl-x-ctrl-z-key-binding-in-emacs-for-minimizing-windo
 (global-set-key "\C-x\C-z" nil)
+
+(load-relative "./theme.el")
+
+(require 'helm-config)
