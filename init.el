@@ -147,4 +147,4 @@
 
 (load-relative "./theme.el")
 
-(require 'helm-config)
+;;(require 'helm-config)
