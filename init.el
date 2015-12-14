@@ -45,11 +45,7 @@
   (package-refresh-contents))
 
 ;; Add in your own as you wish:
-(defvar my-packages '(starter-kit
-                      starter-kit-lisp
-                      starter-kit-bindings
-                      starter-kit-js
-		      load-relative
+(defvar my-packages '(load-relative
                       rainbow-mode ;; give color on css file. need background color to be white
                       yasnippet
                       projectile-rails
@@ -65,9 +61,9 @@
 		      key-chord
                       minitest
                       json-mode
+                      sws-mode
                       )
   "A list of packages to ensure are installed at launch.")
-
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
@@ -147,4 +143,17 @@
 
 (load-relative "./theme.el")
 
-;;(require 'helm-config)
+;; (require 'helm-config)
+
+(require 'sass-mode)
+
+(defvar my-packages '(better-defaults paredit idle-highlight-mode ido-ubiquitous
+                                      find-file-in-project magit smex scpaste))
+
+(package-initialize)
+(dolist (p my-packages)
+  (when (not (package-installed-p p))
+    (package-install p)))
+
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
