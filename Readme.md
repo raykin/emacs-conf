@@ -1,3 +1,5 @@
+### Deprecated
+
 ### Emacs Version
 24
 
@@ -55,5 +57,3 @@ So far so good.
 12. Add Projectile-rails mode. It replace the Rinari mode. Remove Rinari.
 
 13. Remove starter-kit-ruby.
-
-
