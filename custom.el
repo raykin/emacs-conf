@@ -21,13 +21,13 @@
 
 ;; smart-tab make yas hotkey disworked. so we remap yas hotkey
 ;; see more on http://blog.binchen.org/?p=357
-(require 'yasnippet)
-(yas-global-mode 1)
-(define-key yas-minor-mode-map (kbd "<tab>") nil)
-(define-key yas-minor-mode-map (kbd "TAB") nil)
-(global-set-key (kbd "M-p") 'yas/expand)
+;; (require 'yasnippet)
+;; (yas-global-mode 1)
+;; (define-key yas-minor-mode-map (kbd "<tab>") nil)
+;; (define-key yas-minor-mode-map (kbd "TAB") nil)
+;; (global-set-key (kbd "M-p") 'yas/expand)
 ;; since I map the expand to another key, so no need call other command
-(setq yas-fallback-behavior 'return-nil)
+;; (setq yas-fallback-behavior 'return-nil)
 
 ;; jade mode
 ;;(load-relative "vendor/jade-mode/sws-mode.el")

@@ -1,6 +1,6 @@
 ;; (require 'color-theme-sanityinc-tomorrow)
 
-(color-theme-railscasts)
+(load-theme 'railscasts t nil)
 ;;(load-theme 'soft-morning t)
 ;;(load-theme 'zenburn t)
 ;;(load-theme 'wombat)

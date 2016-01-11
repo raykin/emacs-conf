@@ -1,37 +1,3 @@
-;; setup el-get
-(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
-
-(unless (require 'el-get nil 'noerror)
-  (with-current-buffer
-      (url-retrieve-synchronously
-       "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
-    (let (el-get-master-branch)
-      (goto-char (point-max))
-      (eval-print-last-sexp))))
-
-(add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
-
-(el-get 'sync '(
-                smart-tab
-                coffee-mode
-                rhtml-mode
-                color-theme-railscasts
-                autopair
-                sass-mode
-                yaml-mode
-                slim-mode
-                mode-compile
-                session
-                markdown-mode
-                textmate
-                php-mode
-                wanderlust
-                smartparens
-                multiple-cursors))
-;; END setup el-get
-
-;; TODO: has an error that Package assoc is obsolete, but didnt know which package
-
 ;; Load ELPA package
 (require 'package)
 
@@ -47,8 +13,8 @@
 ;; Add in your own as you wish:
 (defvar my-packages '(
 		      load-relative
+		      multiple-cursors
                       rainbow-mode ;; give color on css file. need background color to be white
-                      yasnippet
                       projectile-rails
                       vcard
                       jade-mode
@@ -63,6 +29,21 @@
                       minitest
                       json-mode
                       sws-mode
+		      smart-tab
+		      coffee-mode
+		      rhtml-mode
+		      color-theme-railscasts
+		      autopair
+		      sass-mode
+		      yaml-mode
+		      slim-mode
+		      mode-compile
+		      session
+		      markdown-mode
+		      textmate
+		      php-mode
+		      wanderlust
+		      smartparens
                       )
   "A list of packages to ensure are installed at launch.")
 
