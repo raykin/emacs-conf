@@ -45,7 +45,8 @@
   (package-refresh-contents))
 
 ;; Add in your own as you wish:
-(defvar my-packages '(load-relative
+(defvar my-packages '(
+		      load-relative
                       rainbow-mode ;; give color on css file. need background color to be white
                       yasnippet
                       projectile-rails
