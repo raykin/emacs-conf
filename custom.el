@@ -3,13 +3,13 @@
 (global-smart-tab-mode 1)
 
 ;; smartparens
-(require 'smartparens-config)
-(require 'smartparens-ruby)
-(smartparens-global-mode)
-(show-smartparens-global-mode t)
-(sp-with-modes '(rhtml-mode)
-               (sp-local-pair "<" ">")
-               (sp-local-pair "<%" "%>"))
+;;(require 'smartparens-config)
+;;(require 'smartparens-ruby)
+;;(smartparens-global-mode)
+;;(show-smartparens-global-mode t)
+;;(sp-with-modes '(rhtml-mode)
+;;               (sp-local-pair "<" ">")
+;;               (sp-local-pair "<%" "%>"))
 
 ;; flyspell
 ;; (require 'flyspell)

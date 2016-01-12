@@ -1,5 +1,6 @@
 elpa/*
 .smex-items
+smex-items
 places
 el-get/*
 eshell/*

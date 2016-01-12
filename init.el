@@ -2,9 +2,9 @@
 (require 'package)
 
 (add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/") t)
+             '("melpa" . "https://melpa.org/packages/"))
 (add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+             '("marmalade" . "http://marmalade-repo.org/packages/") t)
 (package-initialize)
 
 (when (not package-archive-contents)
@@ -15,7 +15,7 @@
 		      load-relative
 		      multiple-cursors
                       rainbow-mode ;; give color on css file. need background color to be white
-                      projectile-rails
+                      projectile
                       vcard
                       jade-mode
                       csv-mode
@@ -23,7 +23,6 @@
                       rbenv
                       exec-path-from-shell
                       hlinum
-		      imenu+
 		      iy-go-to-char
 		      key-chord
                       minitest
@@ -31,8 +30,7 @@
                       sws-mode
 		      smart-tab
 		      coffee-mode
-		      rhtml-mode
-		      color-theme-railscasts
+                      railscasts-theme
 		      autopair
 		      sass-mode
 		      yaml-mode
@@ -42,8 +40,13 @@
 		      markdown-mode
 		      textmate
 		      php-mode
-		      wanderlust
-		      smartparens
+                      better-defaults
+                      paredit
+                      idle-highlight-mode
+                      ido-ubiquitous
+                      find-file-in-project
+                      magit
+                      smex
                       )
   "A list of packages to ensure are installed at launch.")
 
@@ -129,13 +132,8 @@
 
 (require 'sass-mode)
 
-(defvar my-packages '(better-defaults paredit idle-highlight-mode ido-ubiquitous
-                                      find-file-in-project magit smex scpaste))
-
-(package-initialize)
-(dolist (p my-packages)
-  (when (not (package-installed-p p))
-    (package-install p)))
+(require 'smex)
+(smex-initialize)
 
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
