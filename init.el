@@ -47,6 +47,7 @@
                       find-file-in-project
                       magit
                       smex
+                      ido-yes-or-no
                       )
   "A list of packages to ensure are installed at launch.")
 
@@ -139,3 +140,5 @@
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 
 (global-auto-revert-mode 1)
+
+(ido-yes-or-no-mode t)
