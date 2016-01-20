@@ -3,6 +3,11 @@
 ### Emacs Version
 24
 
+### Install
+```shell
+    git clone git@github.com:raykin/emacs-conf.git .emacs.d
+```
+
 ### Project Rule
 I've copy and create some emacs configuration repos.But all are not good enough and maintatinable.
 

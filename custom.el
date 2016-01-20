@@ -38,9 +38,9 @@
 (add-to-list 'auto-mode-alist '("\\.jade$" . jade-mode))
 
 ;; session mode
-(require 'session)
-(add-hook 'after-init-hook 'session-initialize)
-(setq desktop-globals-to-save '(desktop-missing-file-warning))
+;;(require 'session)
+;;(add-hook 'after-init-hook 'session-initialize)
+;;(setq desktop-globals-to-save '(desktop-missing-file-warning))
 
 ;; Markdown
 (autoload 'markdown-mode "markdown-mode"
@@ -137,3 +137,9 @@
               (and plus-minus
                    (string-match "^\\([0-9]+\\)\t\\([0-9]+\\)\t" plus-minus)
                    (format " +%s-%s" (match-string 1 plus-minus) (match-string 2 plus-minus)))))))
+
+(when (eq system-type 'darwin) ;; mac specific settings
+  (setq mac-option-modifier 'meta)
+  (setq mac-command-modifier 'meta)
+  (global-set-key [kp-delete] 'delete-char) ;; sets fn-delete to be right-delete
+    )
