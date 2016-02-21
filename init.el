@@ -12,6 +12,7 @@
 
 ;; Add in your own as you wish:
 (defvar my-packages '(
+                      phi-autopair
 		      load-relative
 		      multiple-cursors
                       rainbow-mode ;; give color on css file. need background color to be white
