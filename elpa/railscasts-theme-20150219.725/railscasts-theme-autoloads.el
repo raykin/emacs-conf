@@ -3,8 +3,8 @@
 ;;; Code:
 (add-to-list 'load-path (or (file-name-directory #$) (car load-path)))
 
-;;;### (autoloads nil "railscasts-theme" "railscasts-theme.el" (22165
-;;;;;;  6353 446245 401000))
+;;;### (autoloads nil "railscasts-theme" "railscasts-theme.el" (22227
+;;;;;;  49455 213086 31000))
 ;;; Generated autoloads from railscasts-theme.el
 
 (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name))))

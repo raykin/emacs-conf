@@ -3,8 +3,8 @@
 ;;; Code:
 (add-to-list 'load-path (or (file-name-directory #$) (car load-path)))
 
-;;;### (autoloads nil "load-relative" "load-relative.el" (22165 5030
-;;;;;;  214018 212000))
+;;;### (autoloads nil "load-relative" "load-relative.el" (22227 49439
+;;;;;;  380639 440000))
 ;;; Generated autoloads from load-relative.el
 
 (autoload '__FILE__ "load-relative" "\

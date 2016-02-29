@@ -4,7 +4,7 @@
 (add-to-list 'load-path (or (file-name-directory #$) (car load-path)))
 
 ;;;### (autoloads nil "exec-path-from-shell" "exec-path-from-shell.el"
-;;;;;;  (22166 17486 188066 217000))
+;;;;;;  (22227 49448 320891 646000))
 ;;; Generated autoloads from exec-path-from-shell.el
 
 (autoload 'exec-path-from-shell-copy-envs "exec-path-from-shell" "\

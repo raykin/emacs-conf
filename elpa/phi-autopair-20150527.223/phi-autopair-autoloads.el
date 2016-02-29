@@ -3,8 +3,8 @@
 ;;; Code:
 (add-to-list 'load-path (or (file-name-directory #$) (car load-path)))
 
-;;;### (autoloads nil nil ("phi-autopair.el") (22175 22189 588581
-;;;;;;  0))
+;;;### (autoloads nil nil ("phi-autopair.el") (22227 49443 643743
+;;;;;;  456000))
 
 ;;;***
 
