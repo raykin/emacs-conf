@@ -2,11 +2,11 @@
 smex-items
 places
 el-get/*
+elpa
 eshell/*
 session\.*
 url/cookies
 .session
-elpa
 projectile-bookmarks.eld
 
 .mc-lists.el
