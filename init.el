@@ -35,6 +35,7 @@
                          magit
                          projectile
                          find-file-in-project
+                         quickrun
                          )
   "A list of packages to ensure are installed at launch.")
 
@@ -188,3 +189,6 @@
 
 (getenv "PATH")
 (getenv "STUDIO")
+
+(require 'quickrun)
+(global-set-key (kbd "<f8>") 'quickrun)
