@@ -10,52 +10,78 @@
 (when (not package-archive-contents)
   (package-refresh-contents))
 
+;; todo: remove duplicated autopair
+
 ;; Add in your own as you wish:
-(defvar my-packages '(
-                      phi-autopair
-		      load-relative
-		      multiple-cursors
-                      rainbow-mode ;; give color on css file. need background color to be white
-                      projectile
-                      vcard
-                      jade-mode
-                      csv-mode
-                      robe ;; Jump to ruby method definition
-                      rbenv
-                      exec-path-from-shell
-                      hlinum
-		      iy-go-to-char
-		      key-chord
-                      minitest
-                      json-mode
-                      sws-mode
-		      smart-tab
-		      coffee-mode
-                      railscasts-theme
-		      autopair
-		      sass-mode
-		      yaml-mode
-		      slim-mode
-		      mode-compile
-		      session
-		      markdown-mode
-		      textmate
-		      php-mode
-                      better-defaults
-                      paredit
-                      idle-highlight-mode
-                      ido-ubiquitous
-                      find-file-in-project
-                      magit
-                      smex
-                      ido-yes-or-no
-                      )
+(defvar utils-packages '(
+                         load-relative
+                         smart-tab
+                         phi-autopair
+                         paredit
+                         multiple-cursors
+                         exec-path-from-shell ;; does it useful? dont know, 2016.2
+                         hlinum
+                         iy-go-to-char
+                         key-chord
+                         sws-mode
+                         railscasts-theme
+                         mode-compile
+                         textmate
+                         better-defaults
+                         idle-highlight-mode
+                         ido-ubiquitous
+                         ido-yes-or-no
+                         smex
+                         magit
+                         projectile
+                         find-file-in-project
+                         )
   "A list of packages to ensure are installed at launch.")
 
-(dolist (p my-packages)
+(dolist (p utils-packages)
   (when (not (package-installed-p p))
     (package-install p)))
 ;; END load elpa package
+
+
+(defvar ruby-packages '(
+                        robe ;; Jump to ruby method definition
+                        rbenv
+                        slim-mode
+                        minitest
+                        )
+  )
+
+(dolist (p ruby-packages)
+  (when (not (package-installed-p p))
+    (package-install p)))
+;; END load ruby packages
+
+(defvar js-packages '(
+                      jade-mode
+                      json-mode
+                      coffee-mode
+                      rainbow-mode ;; give color on css file. need background color to be white
+                      sass-mode
+                      )
+  )
+
+(dolist (p js-packages)
+  (when (not (package-installed-p p))
+    (package-install p)))
+;; END load js packages
+
+(defvar text-packages '(
+                        yaml-mode
+                        markdown-mode
+                        csv-mode
+                        )
+  )
+
+(dolist (p text-packages)
+  (when (not (package-installed-p p))
+    (package-install p)))
+;; END load text packages
 
 (exec-path-from-shell-initialize)
 
@@ -65,7 +91,7 @@
 ;; group of useful RoR plugins
 (load-relative "./ror-kit.el")
 
-;; group of useful JS plugins
+;; group of useful TEXT plugins
 ;; tern not worked
 ;; (load-relative "./vendor/tern/emacs/tern.el")
 ;; (require 'tern-mode)
