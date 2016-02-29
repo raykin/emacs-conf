@@ -6,7 +6,7 @@ eshell/*
 session\.*
 url/cookies
 .session
-
+elpa
 projectile-bookmarks.eld
 
 .mc-lists.el
