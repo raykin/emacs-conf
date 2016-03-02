@@ -4,7 +4,7 @@
 (add-to-list 'load-path (or (file-name-directory #$) (car load-path)))
 
 ;;;### (autoloads nil "idle-highlight-mode" "idle-highlight-mode.el"
-;;;;;;  (22227 49465 897387 287000))
+;;;;;;  (22229 46484 0 0))
 ;;; Generated autoloads from idle-highlight-mode.el
 
 (autoload 'idle-highlight-mode "idle-highlight-mode" "\
