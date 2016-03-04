@@ -137,11 +137,11 @@
 (key-chord-define-global "jj" 'iy-go-to-char)
 (key-chord-define-global "vv" 'iy-go-to-char-backward)
 
-(require 'multiple-cursors)
-(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-(global-set-key (kbd "C->") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+;; (require 'multiple-cursors)
+;; (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+;; (global-set-key (kbd "C->") 'mc/mark-next-like-this)
+;; (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+;; (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
 (defun select-current-line ()
   "Select the current line"
