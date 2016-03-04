@@ -51,6 +51,7 @@
                         robe ;; Jump to ruby method definition
                         rbenv
                         slim-mode
+                        dash  ;; required by minitest
                         minitest
                         )
   )
