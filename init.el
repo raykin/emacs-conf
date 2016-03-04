@@ -14,6 +14,8 @@
 
 ;; Add in your own as you wish:
 (defvar utils-packages '(
+                         ag
+                         aggressive-indent
                          load-relative
                          smart-tab
                          phi-autopair
@@ -192,3 +194,7 @@
 
 (require 'quickrun)
 (global-set-key (kbd "<f8>") 'quickrun)
+
+(global-aggressive-indent-mode 1)
+(add-to-list 'aggressive-indent-excluded-modes 'html-mode)
+(add-to-list 'aggressive-indent-excluded-modes 'jade-mode)
