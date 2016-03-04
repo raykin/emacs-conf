@@ -20,7 +20,7 @@
                          smart-tab
                          phi-autopair
                          paredit
-                         multiple-cursors
+                         ;; multiple-cursors ;; emacs 24.4 already include rectangle. looks duplicate with multiple-cursors
                          exec-path-from-shell ;; does it useful? dont know, 2016.2
                          hlinum
                          iy-go-to-char
