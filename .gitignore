@@ -8,7 +8,7 @@ session\.*
 url/cookies
 .session
 projectile-bookmarks.eld
-
+projectile.cache
 .mc-lists.el
 ido.last
 .cache

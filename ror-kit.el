@@ -95,3 +95,5 @@ of seeing_is_believing."
 ;; minitest
 (require 'minitest)
 (add-hook 'ruby-mode-hook 'minitest-mode)
+
+(require 'ruby-end)

@@ -53,6 +53,7 @@
                         slim-mode
                         dash  ;; required by minitest
                         minitest
+                        ruby-end
                         )
   )
 
