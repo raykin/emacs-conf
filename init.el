@@ -19,7 +19,7 @@
                          load-relative
                          smart-tab
                          phi-autopair
-                         paredit
+                         ;; paredit;; seems not used
                          ;; multiple-cursors ;; emacs 24.4 already include rectangle. looks duplicate with multiple-cursors
                          exec-path-from-shell ;; does it useful? dont know, 2016.2
                          hlinum
@@ -197,6 +197,7 @@
 (require 'quickrun)
 (global-set-key (kbd "<f8>") 'quickrun)
 
-(global-aggressive-indent-mode 1)
-(add-to-list 'aggressive-indent-excluded-modes 'html-mode)
-(add-to-list 'aggressive-indent-excluded-modes 'jade-mode)
+;; even in ruby mode, it seems not good enough
+;; (global-aggressive-indent-mode 1)
+;; (add-to-list 'aggressive-indent-excluded-modes 'html-mode)
+;; (add-to-list 'aggressive-indent-excluded-modes 'jade-mode)
