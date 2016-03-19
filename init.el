@@ -15,7 +15,7 @@
 ;; Add in your own as you wish:
 (defvar utils-packages '(
                          ag
-                         aggressive-indent
+                         ;; aggressive-indent ;; not good enough, it's often confused me
                          load-relative
                          smart-tab
                          phi-autopair
