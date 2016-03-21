@@ -19,7 +19,7 @@
                          load-relative
                          smart-tab
                          phi-autopair
-                         ;; paredit;; seems not used
+                         paredit;; required by phi-autopair
                          ;; multiple-cursors ;; emacs 24.4 already include rectangle. looks duplicate with multiple-cursors
                          exec-path-from-shell ;; does it useful? dont know, 2016.2
                          hlinum
