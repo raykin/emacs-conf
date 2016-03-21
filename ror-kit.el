@@ -87,11 +87,6 @@ of seeing_is_believing."
 ;;   '(progn
 ;;      (define-key rhtml-mode-map (kbd "C-l") " => ")))
 
-;; coffee script
-(require 'coffee-mode)
-(setq coffee-tab-width 2)
-;;(add-hook 'coffee-mode-hook 'projectile-rails-on)
-
 ;; minitest
 (require 'minitest)
 (add-hook 'ruby-mode-hook 'minitest-mode)

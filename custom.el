@@ -147,7 +147,6 @@
 (require 'phi-autopair)
 (phi-autopair-global-mode)
 
-(add-hook 'coffee-mode-hook 'projectile-mode)
 (add-hook 'jade-mode-hook 'projectile-mode)
 
 (setq js-indent-level 2)
