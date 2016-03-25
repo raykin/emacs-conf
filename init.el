@@ -96,6 +96,8 @@
 ;; group of useful RoR plugins
 (load-relative "./ror-kit.el")
 
+(load-relative "./coffee-kit.el")
+
 ;; group of useful TEXT plugins
 ;; tern not worked
 ;; (load-relative "./vendor/tern/emacs/tern.el")
@@ -202,4 +204,5 @@
 ;; (add-to-list 'aggressive-indent-excluded-modes 'html-mode)
 ;; (add-to-list 'aggressive-indent-excluded-modes 'jade-mode)
 
+;; seems not useful
 (setq-default tab-width 2)
