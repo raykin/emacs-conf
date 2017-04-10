@@ -49,7 +49,7 @@
                       starter-kit-lisp
                       starter-kit-bindings
                       starter-kit-js
-		      load-relative
+                      load-relative
                       rainbow-mode ;; give color on css file. need background color to be white
                       yasnippet
                       projectile-rails
@@ -60,11 +60,12 @@
                       rbenv
                       exec-path-from-shell
                       hlinum
-		      imenu+
-		      iy-go-to-char
-		      key-chord
+                      imenu+
+                      iy-go-to-char
+                      key-chord
                       minitest
                       json-mode
+                      js2-mode
                       )
   "A list of packages to ensure are installed at launch.")
 
@@ -148,3 +149,6 @@
 (load-relative "./theme.el")
 
 (require 'helm-config)
+
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.es6" . js2-mode))
