@@ -68,6 +68,7 @@
                       coffee-mode
                       rainbow-mode ;; give color on css file. need background color to be white
                       sass-mode
+                      js2-mode
                       )
   )
 
