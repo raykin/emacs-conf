@@ -1,79 +1,92 @@
-;; setup el-get
-(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
-
-(unless (require 'el-get nil 'noerror)
-  (with-current-buffer
-      (url-retrieve-synchronously
-       "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
-    (let (el-get-master-branch)
-      (goto-char (point-max))
-      (eval-print-last-sexp))))
-
-(add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
-
-(el-get 'sync '(
-                smart-tab
-                coffee-mode
-                rhtml-mode
-                color-theme-railscasts
-                autopair
-                sass-mode
-                yaml-mode
-                slim-mode
-                mode-compile
-                session
-                markdown-mode
-                textmate
-                php-mode
-                wanderlust
-                smartparens
-                multiple-cursors))
-;; END setup el-get
-
-;; TODO: has an error that Package assoc is obsolete, but didnt know which package
-
 ;; Load ELPA package
 (require 'package)
 
 (add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/") t)
+             '("melpa" . "https://melpa.org/packages/"))
 (add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+             '("marmalade" . "http://marmalade-repo.org/packages/") t)
 (package-initialize)
 
 (when (not package-archive-contents)
   (package-refresh-contents))
 
+;; todo: remove duplicated autopair
+
 ;; Add in your own as you wish:
-(defvar my-packages '(starter-kit
-                      starter-kit-lisp
-                      starter-kit-bindings
-                      starter-kit-js
-                      load-relative
-                      rainbow-mode ;; give color on css file. need background color to be white
-                      yasnippet
-                      projectile-rails
-                      vcard
-                      jade-mode
-                      csv-mode
-                      robe ;; Jump to ruby method definition
-                      rbenv
-                      exec-path-from-shell
-                      hlinum
-                      imenu+
-                      iy-go-to-char
-                      key-chord
-                      minitest
-                      json-mode
-                      js2-mode
-                      )
+(defvar utils-packages '(
+                         ag
+                         ;; aggressive-indent ;; not good enough, it's often confused me
+                         load-relative
+                         smart-tab
+                         phi-autopair
+                         paredit;; required by phi-autopair
+                         ;; multiple-cursors ;; emacs 24.4 already include rectangle. looks duplicate with multiple-cursors
+                         exec-path-from-shell ;; does it useful? dont know, 2016.2
+                         hlinum
+                         iy-go-to-char
+                         key-chord
+                         sws-mode
+                         railscasts-theme
+                         mode-compile
+                         textmate
+                         better-defaults
+                         idle-highlight-mode
+                         ido-ubiquitous
+                         ido-yes-or-no
+                         smex
+                         magit
+                         projectile
+                         find-file-in-project
+                         quickrun
+                         )
   "A list of packages to ensure are installed at launch.")
 
-
-(dolist (p my-packages)
+(dolist (p utils-packages)
   (when (not (package-installed-p p))
     (package-install p)))
 ;; END load elpa package
+
+
+(defvar ruby-packages '(
+                        robe ;; Jump to ruby method definition
+                        rbenv
+                        slim-mode
+                        dash  ;; required by minitest
+                        minitest
+                        ruby-end
+                        )
+  )
+
+(dolist (p ruby-packages)
+  (when (not (package-installed-p p))
+    (package-install p)))
+;; END load ruby packages
+
+(defvar js-packages '(
+                      jade-mode
+                      json-mode
+                      coffee-mode
+                      rainbow-mode ;; give color on css file. need background color to be white
+                      sass-mode
+                      )
+  )
+
+(dolist (p js-packages)
+  (when (not (package-installed-p p))
+    (package-install p)))
+;; END load js packages
+
+(defvar text-packages '(
+                        yaml-mode
+                        markdown-mode
+                        csv-mode
+                        )
+  )
+
+(dolist (p text-packages)
+  (when (not (package-installed-p p))
+    (package-install p)))
+;; END load text packages
 
 (exec-path-from-shell-initialize)
 
@@ -83,7 +96,9 @@
 ;; group of useful RoR plugins
 (load-relative "./ror-kit.el")
 
-;; group of useful JS plugins
+(load-relative "./coffee-kit.el")
+
+;; group of useful TEXT plugins
 ;; tern not worked
 ;; (load-relative "./vendor/tern/emacs/tern.el")
 ;; (require 'tern-mode)
@@ -125,11 +140,11 @@
 (key-chord-define-global "jj" 'iy-go-to-char)
 (key-chord-define-global "vv" 'iy-go-to-char-backward)
 
-(require 'multiple-cursors)
-(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-(global-set-key (kbd "C->") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+;; (require 'multiple-cursors)
+;; (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+;; (global-set-key (kbd "C->") 'mc/mark-next-like-this)
+;; (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+;; (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
 (defun select-current-line ()
   "Select the current line"
@@ -152,3 +167,47 @@
 
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.es6" . js2-mode))
+
+;; (require 'helm-config)
+
+(require 'sass-mode)
+
+(require 'smex)
+(smex-initialize)
+
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+
+(global-auto-revert-mode 1)
+
+(ido-yes-or-no-mode t)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("3b0a350918ee819dca209cec62d867678d7dac74f6195f5e3799aa206358a983" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" default))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(mode-line ((t (:foreground "#030303" :background "#bdbdbd" :box nil))))
+ '(mode-line-inactive ((t (:foreground "#f9f9f9" :background "#666666" :box nil)))))
+
+
+(getenv "PATH")
+(getenv "STUDIO")
+
+(require 'quickrun)
+(global-set-key (kbd "<f8>") 'quickrun)
+
+;; even in ruby mode, it seems not good enough
+;; (global-aggressive-indent-mode 1)
+;; (add-to-list 'aggressive-indent-excluded-modes 'html-mode)
+;; (add-to-list 'aggressive-indent-excluded-modes 'jade-mode)
+
+;; seems not useful
+(setq-default tab-width 2)

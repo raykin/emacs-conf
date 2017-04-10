@@ -3,13 +3,13 @@
 (global-smart-tab-mode 1)
 
 ;; smartparens
-(require 'smartparens-config)
-(require 'smartparens-ruby)
-(smartparens-global-mode)
-(show-smartparens-global-mode t)
-(sp-with-modes '(rhtml-mode)
-               (sp-local-pair "<" ">")
-               (sp-local-pair "<%" "%>"))
+;;(require 'smartparens-config)
+;;(require 'smartparens-ruby)
+;;(smartparens-global-mode)
+;;(show-smartparens-global-mode t)
+;;(sp-with-modes '(rhtml-mode)
+;;               (sp-local-pair "<" ">")
+;;               (sp-local-pair "<%" "%>"))
 
 ;; flyspell
 ;; (require 'flyspell)
@@ -21,13 +21,13 @@
 
 ;; smart-tab make yas hotkey disworked. so we remap yas hotkey
 ;; see more on http://blog.binchen.org/?p=357
-(require 'yasnippet)
-(yas-global-mode 1)
-(define-key yas-minor-mode-map (kbd "<tab>") nil)
-(define-key yas-minor-mode-map (kbd "TAB") nil)
-(global-set-key (kbd "M-p") 'yas/expand)
+;; (require 'yasnippet)
+;; (yas-global-mode 1)
+;; (define-key yas-minor-mode-map (kbd "<tab>") nil)
+;; (define-key yas-minor-mode-map (kbd "TAB") nil)
+;; (global-set-key (kbd "M-p") 'yas/expand)
 ;; since I map the expand to another key, so no need call other command
-(setq yas-fallback-behavior 'return-nil)
+;; (setq yas-fallback-behavior 'return-nil)
 
 ;; jade mode
 ;;(load-relative "vendor/jade-mode/sws-mode.el")
@@ -38,9 +38,9 @@
 (add-to-list 'auto-mode-alist '("\\.jade$" . jade-mode))
 
 ;; session mode
-(require 'session)
-(add-hook 'after-init-hook 'session-initialize)
-(setq desktop-globals-to-save '(desktop-missing-file-warning))
+;;(require 'session)
+;;(add-hook 'after-init-hook 'session-initialize)
+;;(setq desktop-globals-to-save '(desktop-missing-file-warning))
 
 ;; Markdown
 (autoload 'markdown-mode "markdown-mode"
@@ -137,3 +137,16 @@
               (and plus-minus
                    (string-match "^\\([0-9]+\\)\t\\([0-9]+\\)\t" plus-minus)
                    (format " +%s-%s" (match-string 1 plus-minus) (match-string 2 plus-minus)))))))
+
+(when (eq system-type 'darwin) ;; mac specific settings
+  (setq mac-option-modifier 'meta)
+  (setq mac-command-modifier 'meta)
+  (global-set-key [kp-delete] 'delete-char) ;; sets fn-delete to be right-delete
+    )
+
+(require 'phi-autopair)
+(phi-autopair-global-mode)
+
+(add-hook 'jade-mode-hook 'projectile-mode)
+
+(setq js-indent-level 2)

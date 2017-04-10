@@ -7,7 +7,7 @@
 (add-hook 'ruby-mode-hook 'robe-mode)
 (add-hook 'ruby-mode-hook 'projectile-mode)
 ;; (setq projectile-enable-caching t)
-(add-hook 'ruby-mode-hook 'projectile-rails-on)
+;;(add-hook 'ruby-mode-hook 'projectile-rails-on)
 
 ;; Rake files are ruby, too, as are gemspecs, rackup files, etc.
 (add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
@@ -45,20 +45,20 @@ of seeing_is_believing."
 (global-set-key (kbd "C-c C-c") 'seeing-is-believing)
 
 ;; custom projectile-rails mode
-(custom-set-variables
- '(projectile-rails-keymap-prefix (kbd "M-r")))
-(global-set-key (kbd "M-g") 'projectile-grep) ;; why failed?
+;; (custom-set-variables
+;;  '(projectile-rails-keymap-prefix (kbd "M-r")))
+;; (global-set-key (kbd "M-g") 'projectile-grep) ;; why failed?
 
 ;; Rhtml mode
-(require 'rhtml-mode)
-(add-to-list 'auto-mode-alist '("\\.erb\\'" . rhtml-mode))
-(add-to-list 'auto-mode-alist '("\\.rjs\\'" . rhtml-mode))
-(add-hook 'rhtml-mode-hook 'projectile-rails-on)
-(add-hook 'rhtml-mode-hook 'turn-off-auto-fill)
+;; (require 'rhtml-mode)
+;; (add-to-list 'auto-mode-alist '("\\.erb\\'" . rhtml-mode))
+;; (add-to-list 'auto-mode-alist '("\\.rjs\\'" . rhtml-mode))
+;; ;;(add-hook 'rhtml-mode-hook 'projectile-rails-on)
+;; (add-hook 'rhtml-mode-hook 'turn-off-auto-fill)
 
 ;; Slim mode
 (add-hook 'slim-mode-hook 'projectile-mode)
-(add-hook 'slim-mode-hook 'projectile-rails-on)
+;;(add-hook 'slim-mode-hook 'projectile-rails-on)
 
 ;; autopair
 ;;(require 'autopair)
@@ -87,11 +87,8 @@ of seeing_is_believing."
 ;;   '(progn
 ;;      (define-key rhtml-mode-map (kbd "C-l") " => ")))
 
-;; coffee script
-(require 'coffee-mode)
-(setq coffee-tab-width 2)
-(add-hook 'coffee-mode-hook 'projectile-rails-on)
-
 ;; minitest
 (require 'minitest)
 (add-hook 'ruby-mode-hook 'minitest-mode)
+
+(require 'ruby-end)

@@ -1,12 +1,14 @@
-elpa/*
 .smex-items
+smex-items
 places
 el-get/*
+elpa
 eshell/*
 session\.*
 url/cookies
 .session
-
 projectile-bookmarks.eld
-
+projectile.cache
 .mc-lists.el
+ido.last
+.cache
