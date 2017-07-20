@@ -51,7 +51,7 @@ of seeing_is_believing."
 
 ;; Rhtml mode
 ;; (require 'rhtml-mode)
-;; (add-to-list 'auto-mode-alist '("\\.erb\\'" . rhtml-mode))
+(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
 ;; (add-to-list 'auto-mode-alist '("\\.rjs\\'" . rhtml-mode))
 ;; ;;(add-hook 'rhtml-mode-hook 'projectile-rails-on)
 ;; (add-hook 'rhtml-mode-hook 'turn-off-auto-fill)
