@@ -6,6 +6,7 @@
 (add-to-list 'auto-mode-alist '("\\.rabl\\'" . ruby-mode))
 (add-hook 'ruby-mode-hook 'robe-mode)
 (add-hook 'ruby-mode-hook 'projectile-mode)
+(projectile-rails-global-mode)
 ;; (setq projectile-enable-caching t)
 ;;(add-hook 'ruby-mode-hook 'projectile-rails-on)
 
@@ -25,14 +26,8 @@
 (add-to-list 'completion-ignored-extensions ".rbo")
 
 ;; load rbenv mode
-;;(add-to-list 'load-path (expand-file-name "/path/to/rbenv.el/"))
 (require 'rbenv)
 (global-rbenv-mode)
-;; TODO: emacs-powerline override rbenv version msg on modeline
-;; (load-relative "./vendor/rbenv.el/rbenv")
-;; (add-hook 'ruby-mode-hook 'global-rbenv-mode)
-;; this will remove the colors of rbenv version string
-;; (setq rbenv-modeline-function 'rbenv--modeline-plain)
 
 ;;
 (defun seeing-is-believing ()
@@ -48,17 +43,10 @@ of seeing_is_believing."
 ;; (custom-set-variables
 ;;  '(projectile-rails-keymap-prefix (kbd "M-r")))
 ;; (global-set-key (kbd "M-g") 'projectile-grep) ;; why failed?
-
-;; Rhtml mode
-;; (require 'rhtml-mode)
-;; (add-to-list 'auto-mode-alist '("\\.erb\\'" . rhtml-mode))
-;; (add-to-list 'auto-mode-alist '("\\.rjs\\'" . rhtml-mode))
-;; ;;(add-hook 'rhtml-mode-hook 'projectile-rails-on)
-;; (add-hook 'rhtml-mode-hook 'turn-off-auto-fill)
+(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
 
 ;; Slim mode
 (add-hook 'slim-mode-hook 'projectile-mode)
-;;(add-hook 'slim-mode-hook 'projectile-rails-on)
 
 ;; autopair
 ;;(require 'autopair)
@@ -66,7 +54,10 @@ of seeing_is_believing."
 
 ;; Sass
 (require 'sass-mode)
-(add-to-list 'auto-mode-alist '("\\.scss\\'" . sass-mode))
+
+;; Scss
+(autoload 'scss-mode "scss-mode")
+(add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
 
 ;; YAML
 (require 'yaml-mode)
@@ -90,5 +81,10 @@ of seeing_is_believing."
 ;; minitest
 (require 'minitest)
 (add-hook 'ruby-mode-hook 'minitest-mode)
+
+;; rspec
+(add-to-list 'load-path "/path/to/rspec-mode")
+(require 'rspec-mode)
+(add-hook 'after-init-hook 'inf-ruby-switch-setup)
 
 (require 'ruby-end)

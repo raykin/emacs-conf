@@ -1,46 +1,11 @@
-;; install smart-tab from el-get
 (require 'smart-tab)
 (global-smart-tab-mode 1)
 
-;; smartparens
-;;(require 'smartparens-config)
-;;(require 'smartparens-ruby)
-;;(smartparens-global-mode)
-;;(show-smartparens-global-mode t)
-;;(sp-with-modes '(rhtml-mode)
-;;               (sp-local-pair "<" ">")
-;;               (sp-local-pair "<%" "%>"))
-
-;; flyspell
-;; (require 'flyspell)
-;; (setq flyspell-issue-message-flag nil)
-;; (add-hook 'prog-mode-hook
-;;           (lambda () (flyspell-prog-mode)))
-;; flyspell mode breaks auto-complete mode without this.
-;; (ac-flyspell-workaround)
-
-;; smart-tab make yas hotkey disworked. so we remap yas hotkey
-;; see more on http://blog.binchen.org/?p=357
-;; (require 'yasnippet)
-;; (yas-global-mode 1)
-;; (define-key yas-minor-mode-map (kbd "<tab>") nil)
-;; (define-key yas-minor-mode-map (kbd "TAB") nil)
-;; (global-set-key (kbd "M-p") 'yas/expand)
-;; since I map the expand to another key, so no need call other command
-;; (setq yas-fallback-behavior 'return-nil)
-
-;; jade mode
-;;(load-relative "vendor/jade-mode/sws-mode.el")
-;;(load-relative "vendor/jade-mode/jade-mode.el")
 (require 'sws-mode)
 (require 'jade-mode)
 (add-to-list 'auto-mode-alist '("\\.styl$" . sws-mode))
 (add-to-list 'auto-mode-alist '("\\.jade$" . jade-mode))
-
-;; session mode
-;;(require 'session)
-;;(add-hook 'after-init-hook 'session-initialize)
-;;(setq desktop-globals-to-save '(desktop-missing-file-warning))
+(add-to-list 'auto-mode-alist '("\\.pug$" . jade-mode))
 
 ;; Markdown
 (autoload 'markdown-mode "markdown-mode"
@@ -65,12 +30,19 @@
 
 ;; list of global hook
 ;; how to remove this hook on markdown-mode
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
+;; (add-hook 'before-save-hook 'delete-trailing-whitespace)
+(require 'ws-butler)
+(add-hook 'prog-mode-hook 'ws-butler-mode)
 (add-hook 'prog-mode-hook 'turn-off-auto-fill)
 
-;; Setting Emacs Split to Horizontal
-(setq split-height-threshold 0)
-(setq split-width-threshold nil)
+;; Auto Split to Horizontal
+;; not sure if it useful.
+;; (setq split-height-threshold 0)
+;; (setq split-width-threshold nil)
+
+;; Auto Split to Vertically
+(setq split-height-threshold nil)
+(setq split-width-threshold 80)
 
 ;; GUI
 (set-face-attribute 'default nil :height 170)
@@ -129,14 +101,14 @@
 
 
 ;; try add git status on bottom bar. not worked
-(defadvice vc-git-mode-line-string (after plus-minus (file) compile activate)
-  (setq ad-return-value
-    (concat ad-return-value
-            (let ((plus-minus (vc-git--run-command-string
-                               file "diff" "--numstat" "--")))
-              (and plus-minus
-                   (string-match "^\\([0-9]+\\)\t\\([0-9]+\\)\t" plus-minus)
-                   (format " +%s-%s" (match-string 1 plus-minus) (match-string 2 plus-minus)))))))
+;; (defadvice vc-git-mode-line-string (after plus-minus (file) compile activate)
+;;   (setq ad-return-value
+;;     (concat ad-return-value
+;;             (let ((plus-minus (vc-git--run-command-string
+;;                                file "diff" "--numstat" "--")))
+;;               (and plus-minus
+;;                    (string-match "^\\([0-9]+\\)\t\\([0-9]+\\)\t" plus-minus)
+;;                    (format " +%s-%s" (match-string 1 plus-minus) (match-string 2 plus-minus)))))))
 
 (when (eq system-type 'darwin) ;; mac specific settings
   (setq mac-option-modifier 'meta)
