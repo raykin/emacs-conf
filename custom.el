@@ -36,6 +36,7 @@
 (require 'jade-mode)
 (add-to-list 'auto-mode-alist '("\\.styl$" . sws-mode))
 (add-to-list 'auto-mode-alist '("\\.jade$" . jade-mode))
+(add-to-list 'auto-mode-alist '("\\.pug$" . jade-mode))
 
 ;; session mode
 ;;(require 'session)
