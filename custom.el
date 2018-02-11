@@ -66,7 +66,9 @@
 
 ;; list of global hook
 ;; how to remove this hook on markdown-mode
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
+;; (add-hook 'before-save-hook 'delete-trailing-whitespace)
+(require 'ws-butler)
+(add-hook 'prog-mode-hook 'ws-butler-mode)
 (add-hook 'prog-mode-hook 'turn-off-auto-fill)
 
 ;; Setting Emacs Split to Horizontal
