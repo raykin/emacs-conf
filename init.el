@@ -38,6 +38,8 @@
                          projectile
                          find-file-in-project
                          quickrun
+												 emojify
+												 color-theme-sanityinc-tomorrow
                          )
   "A list of packages to ensure are installed at launch.")
 
@@ -55,6 +57,7 @@
                         minitest
                         ruby-end
                         projectile-rails
+			rspec-mode
                         )
   )
 
@@ -70,6 +73,7 @@
                       rainbow-mode ;; give color on css file. need background color to be white
                       sass-mode
                       js2-mode
+											typescript-mode
                       )
   )
 
