@@ -71,9 +71,14 @@
 (add-hook 'prog-mode-hook 'ws-butler-mode)
 (add-hook 'prog-mode-hook 'turn-off-auto-fill)
 
-;; Setting Emacs Split to Horizontal
-(setq split-height-threshold 0)
-(setq split-width-threshold nil)
+;; Auto Split to Horizontal
+;; not sure if it useful.
+;; (setq split-height-threshold 0)
+;; (setq split-width-threshold nil)
+
+;; Auto Split to Vertically
+(setq split-height-threshold nil)
+(setq split-width-threshold 80)
 
 ;; GUI
 (set-face-attribute 'default nil :height 170)
@@ -132,14 +137,14 @@
 
 
 ;; try add git status on bottom bar. not worked
-(defadvice vc-git-mode-line-string (after plus-minus (file) compile activate)
-  (setq ad-return-value
-    (concat ad-return-value
-            (let ((plus-minus (vc-git--run-command-string
-                               file "diff" "--numstat" "--")))
-              (and plus-minus
-                   (string-match "^\\([0-9]+\\)\t\\([0-9]+\\)\t" plus-minus)
-                   (format " +%s-%s" (match-string 1 plus-minus) (match-string 2 plus-minus)))))))
+;; (defadvice vc-git-mode-line-string (after plus-minus (file) compile activate)
+;;   (setq ad-return-value
+;;     (concat ad-return-value
+;;             (let ((plus-minus (vc-git--run-command-string
+;;                                file "diff" "--numstat" "--")))
+;;               (and plus-minus
+;;                    (string-match "^\\([0-9]+\\)\t\\([0-9]+\\)\t" plus-minus)
+;;                    (format " +%s-%s" (match-string 1 plus-minus) (match-string 2 plus-minus)))))))
 
 (when (eq system-type 'darwin) ;; mac specific settings
   (setq mac-option-modifier 'meta)

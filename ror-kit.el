@@ -66,7 +66,10 @@ of seeing_is_believing."
 
 ;; Sass
 (require 'sass-mode)
-(add-to-list 'auto-mode-alist '("\\.scss\\'" . sass-mode))
+
+;; Scss
+(autoload 'scss-mode "scss-mode")
+(add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
 
 ;; YAML
 (require 'yaml-mode)
