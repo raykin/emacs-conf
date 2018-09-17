@@ -1,47 +1,11 @@
-;; install smart-tab from el-get
 (require 'smart-tab)
 (global-smart-tab-mode 1)
 
-;; smartparens
-;;(require 'smartparens-config)
-;;(require 'smartparens-ruby)
-;;(smartparens-global-mode)
-;;(show-smartparens-global-mode t)
-;;(sp-with-modes '(rhtml-mode)
-;;               (sp-local-pair "<" ">")
-;;               (sp-local-pair "<%" "%>"))
-
-;; flyspell
-;; (require 'flyspell)
-;; (setq flyspell-issue-message-flag nil)
-;; (add-hook 'prog-mode-hook
-;;           (lambda () (flyspell-prog-mode)))
-;; flyspell mode breaks auto-complete mode without this.
-;; (ac-flyspell-workaround)
-
-;; smart-tab make yas hotkey disworked. so we remap yas hotkey
-;; see more on http://blog.binchen.org/?p=357
-;; (require 'yasnippet)
-;; (yas-global-mode 1)
-;; (define-key yas-minor-mode-map (kbd "<tab>") nil)
-;; (define-key yas-minor-mode-map (kbd "TAB") nil)
-;; (global-set-key (kbd "M-p") 'yas/expand)
-;; since I map the expand to another key, so no need call other command
-;; (setq yas-fallback-behavior 'return-nil)
-
-;; jade mode
-;;(load-relative "vendor/jade-mode/sws-mode.el")
-;;(load-relative "vendor/jade-mode/jade-mode.el")
 (require 'sws-mode)
 (require 'jade-mode)
 (add-to-list 'auto-mode-alist '("\\.styl$" . sws-mode))
 (add-to-list 'auto-mode-alist '("\\.jade$" . jade-mode))
 (add-to-list 'auto-mode-alist '("\\.pug$" . jade-mode))
-
-;; session mode
-;;(require 'session)
-;;(add-hook 'after-init-hook 'session-initialize)
-;;(setq desktop-globals-to-save '(desktop-missing-file-warning))
 
 ;; Markdown
 (autoload 'markdown-mode "markdown-mode"

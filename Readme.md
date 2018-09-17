@@ -42,7 +42,7 @@ so far so good.
 
 3. Add session feature on session-mode branch.
 
-4. Add ror-kit branch to add several convenient lib: autopair, rhtml, sass, yaml.
+4. Add ror-kit branch to add several convenient lib: autopair, sass, yaml.
 
 5. Add markdown-mode and other global configure.
 So far so good.

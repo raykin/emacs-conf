@@ -12,3 +12,5 @@ projectile.cache
 .mc-lists.el
 ido.last
 .cache
+.DS_Store
+emojis/
