@@ -225,7 +225,7 @@
       `((".*" ,temporary-file-directory t)))
 
 (setq ring-bell-function (lambda () (message "*woop*")))
-(add-hook 'after-init-hook #'global-emojify-mode)
+;; (add-hook 'after-init-hook #'global-emojify-mode)
 
 (setq typescript-indent-level 2)
 
