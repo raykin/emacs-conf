@@ -3,8 +3,7 @@
 
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/"))
-(add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/") t)
+
 (package-initialize)
 
 (when (not package-archive-contents)
