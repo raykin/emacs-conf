@@ -48,7 +48,6 @@
     (package-install p)))
 ;; END load elpa package
 
-
 (defvar ruby-packages '(
                         robe ;; Jump to ruby method definition
                         rbenv
@@ -57,7 +56,7 @@
                         minitest
                         ruby-end
                         projectile-rails
-			rspec-mode
+												rspec-mode
                         )
   )
 
