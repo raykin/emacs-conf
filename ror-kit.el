@@ -83,7 +83,6 @@ of seeing_is_believing."
 (add-hook 'ruby-mode-hook 'minitest-mode)
 
 ;; rspec
-(add-to-list 'load-path "/path/to/rspec-mode")
 (require 'rspec-mode)
 (add-hook 'after-init-hook 'inf-ruby-switch-setup)
 

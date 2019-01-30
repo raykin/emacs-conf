@@ -108,9 +108,9 @@
 (cd "~/studio")
 
 ;; remove autofill which was defined in emacs-starter-kit
-(remove-hook 'prog-mode-hook 'esk-local-comment-auto-fill)
+;;(remove-hook 'prog-mode-hook 'esk-local-comment-auto-fill)
 ;; remove hl-line-mode hook which was defined in emacs-starter-kit
-(remove-hook 'prog-mode-hook 'esk-turn-on-hl-line-mode)
+;;(remove-hook 'prog-mode-hook 'esk-turn-on-hl-line-mode)
 ;; cause inf-ruby-keys not exist
 (remove-hook 'ruby-mode-hook 'inf-ruby-keys)
 
