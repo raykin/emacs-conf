@@ -21,6 +21,8 @@
 
 (global-set-key (kbd "s-v") 'scroll-other-window)
 (global-set-key (kbd "s-v") 'scroll-other-window-down)
+(global-set-key (kbd "C-x g") 'magit-status)
+(global-set-key (kbd "C-x C-p") 'find-file-at-point)
 ;; list of global mode
 ;;(global-linum-mode 1)
 
