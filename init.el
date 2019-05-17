@@ -72,7 +72,7 @@
                       rainbow-mode ;; give color on css file. need background color to be white
                       sass-mode
                       js2-mode
-											typescript-mode
+											tide
                       )
   )
 
@@ -175,6 +175,7 @@
 (global-auto-revert-mode 1)
 
 (ido-yes-or-no-mode t)
+;; I don't understand what it is
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -224,8 +225,6 @@
 
 (setq ring-bell-function (lambda () (message "*woop*")))
 ;; (add-hook 'after-init-hook #'global-emojify-mode)
-
-(setq typescript-indent-level 2)
 
 ;; change json indention to 4 space.
 ;; (add-hook 'json-mode-hook
