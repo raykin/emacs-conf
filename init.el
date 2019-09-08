@@ -3,8 +3,7 @@
 
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/"))
-(add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/") t)
+
 (package-initialize)
 
 (when (not package-archive-contents)
@@ -29,6 +28,7 @@
                          railscasts-theme
                          mode-compile
                          textmate
+                         ws-butler
                          better-defaults
                          idle-highlight-mode
                          ido-ubiquitous
@@ -47,7 +47,6 @@
   (when (not (package-installed-p p))
     (package-install p)))
 ;; END load elpa package
-
 
 (defvar ruby-packages '(
                         robe ;; Jump to ruby method definition
@@ -73,8 +72,8 @@
                       rainbow-mode ;; give color on css file. need background color to be white
                       sass-mode
                       js2-mode
-											tide
-											company ;; enhance tide
+			tide
+			company ;; enhance tide
                       )
   )
 
@@ -110,9 +109,9 @@
 (cd "~/studio")
 
 ;; remove autofill which was defined in emacs-starter-kit
-(remove-hook 'prog-mode-hook 'esk-local-comment-auto-fill)
+;;(remove-hook 'prog-mode-hook 'esk-local-comment-auto-fill)
 ;; remove hl-line-mode hook which was defined in emacs-starter-kit
-(remove-hook 'prog-mode-hook 'esk-turn-on-hl-line-mode)
+;;(remove-hook 'prog-mode-hook 'esk-turn-on-hl-line-mode)
 ;; cause inf-ruby-keys not exist
 (remove-hook 'ruby-mode-hook 'inf-ruby-keys)
 
@@ -177,6 +176,7 @@
 (global-auto-revert-mode 1)
 
 (ido-yes-or-no-mode t)
+;; I don't understand what it is
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

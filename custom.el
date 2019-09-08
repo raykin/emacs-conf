@@ -21,6 +21,8 @@
 
 (global-set-key (kbd "s-v") 'scroll-other-window)
 (global-set-key (kbd "s-v") 'scroll-other-window-down)
+(global-set-key (kbd "C-x g") 'magit-status)
+(global-set-key (kbd "C-x C-p") 'find-file-at-point)
 ;; list of global mode
 ;;(global-linum-mode 1)
 
@@ -67,17 +69,6 @@
  '(mode-line ((t (:foreground "#030303" :background "#bdbdbd" :box nil))))
  '(mode-line-inactive ((t (:foreground "#f9f9f9" :background "#666666" :box nil)))))
 
-;; try Add Git Status in mode-line but failed
-;; (defadvice vc-git-mode-line-string (after plus-minus (file) compile activate)
-;;   (setq ad-return-value
-;;     (concat ad-return-value
-;;             (let ((plus-minus (vc-git--run-command-string
-;;                                file "diff" "--numstat" "--")))
-;;               (and plus-minus
-;;                    (string-match "^\\([0-9]+\\)\t\\([0-9]+\\)\t" plus-minus)
-;;                    (format " +%s-%s" (match-string 1 plus-minus) (match-string 2 plus-minus)))))))
-
-
 ;; Hide Show mode
 (defun toggle-selective-display (column)
       (interactive "P")
@@ -110,7 +101,8 @@
 ;;                    (string-match "^\\([0-9]+\\)\t\\([0-9]+\\)\t" plus-minus)
 ;;                    (format " +%s-%s" (match-string 1 plus-minus) (match-string 2 plus-minus)))))))
 
-(when (eq system-type 'darwin) ;; mac specific settings
+;; mac specific settings
+(when (eq system-type 'darwin)
   (setq mac-option-modifier 'meta)
   (setq mac-command-modifier 'meta)
   (global-set-key [kp-delete] 'delete-char) ;; sets fn-delete to be right-delete
