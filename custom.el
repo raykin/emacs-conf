@@ -13,12 +13,7 @@
 (add-to-list 'auto-mode-alist '("\\.md" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown" . markdown-mode))
 
-;; Textmate mode
-(textmate-mode t)
 (global-set-key (kbd "M-/") 'comment-or-uncomment-region-or-line)
-;; (global-set-key (kbd "M-t") 'textmate-goto-file) ;; M-t can be used as transpose-words
-(global-set-key (kbd "M-T") 'textmate-goto-symbol)
-
 (global-set-key (kbd "s-v") 'scroll-other-window)
 (global-set-key (kbd "s-v") 'scroll-other-window-down)
 (global-set-key (kbd "C-x g") 'magit-status)
