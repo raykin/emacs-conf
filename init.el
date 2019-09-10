@@ -242,3 +242,7 @@
 ;; enable the usage of file ignore pattern
 (setq projectile-indexing-method 'native)
 (setq projectile-enable-caching t)
+
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+(ido-mode 1)
