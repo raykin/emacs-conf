@@ -31,6 +31,8 @@
 (require 'ws-butler)
 (add-hook 'prog-mode-hook 'ws-butler-mode)
 (add-hook 'prog-mode-hook 'turn-off-auto-fill)
+;; does not work at all
+;; (add-hook 'prog-mode-hook 'hs-minor-mode)
 
 ;; Auto Split to Horizontal
 ;; not sure if it useful.
@@ -83,7 +85,8 @@
 
 (global-set-key (kbd "C-,") 'toggle-hiding) ;; seems not worked in hs-minor-mode?
 (global-set-key (kbd "C-.") 'toggle-selective-display) ;; the fold codes work, but not work great. cause it fold all codes once you trigger it
-(add-hook 'ruby-mode-hook 'hs-minor-mode)
+;; hs-minor-mode behave stranged
+;; (add-hook 'ruby-mode-hook 'hs-minor-mode)
 
 
 ;; try add git status on bottom bar. not worked
@@ -109,3 +112,4 @@
 (add-hook 'jade-mode-hook 'projectile-mode)
 
 (setq js-indent-level 2)
+(global-set-key (kbd "M-/") 'comment-or-uncomment-region)

@@ -246,3 +246,7 @@
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
 (ido-mode 1)
+
+;; see https://www.masteringemacs.org/article/introduction-to-ido-mode
+(setq ido-use-filename-at-point 'guess)
+(setq ido-ignore-extensions t)
