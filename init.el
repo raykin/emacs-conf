@@ -9,8 +9,6 @@
 (when (not package-archive-contents)
   (package-refresh-contents))
 
-;; todo: remove duplicated autopair
-
 ;; Add in your own as you wish:
 (defvar utils-packages '(
                          ag
@@ -47,40 +45,6 @@
     (package-install p)))
 ;; END load elpa package
 
-(defvar ruby-packages '(
-                        robe ;; Jump to ruby method definition
-                        rbenv
-                        slim-mode
-                        dash  ;; required by minitest
-                        minitest
-                        ruby-end
-                        projectile-rails
-			rspec-mode
-                        )
-  )
-
-(dolist (p ruby-packages)
-  (when (not (package-installed-p p))
-    (package-install p)))
-;; END load ruby packages
-
-(defvar js-packages '(
-                      jade-mode
-                      json-mode
-                      coffee-mode
-                      rainbow-mode ;; give color on css file. need background color to be white
-                      sass-mode
-                      js2-mode
-			tide
-			company ;; enhance tide
-                      )
-  )
-
-(dolist (p js-packages)
-  (when (not (package-installed-p p))
-    (package-install p)))
-;; END load js packages
-
 (defvar text-packages '(
                         yaml-mode
                         markdown-mode
@@ -100,8 +64,9 @@
 
 ;; group of useful RoR plugins
 (load-relative "./ror-kit.el")
-
+(load-relative "./js-kit.el")
 (load-relative "./coffee-kit.el")
+(load-relative "./experiment.el")
 
 ;; my start working dir. change it to your favorite
 ;; put it at the end of file cause it can change emacs variables, ex: default-directory
@@ -123,26 +88,6 @@
 (set-cursor-color "orange")
 
 (setq dotfiles-dir (file-name-directory (or load-file-name (buffer-file-name))))
-
-(defun recompile-init ()
-  "Byte-compile all your dotfiles again."
-  (interactive)
-  ;; TODO: remove elpa-to-submit once everything's submitted.
-  (byte-recompile-directory dotfiles-dir 0))
-
-(require 'key-chord)
-(key-chord-mode 1)
-(key-chord-define-global "jk" 'undo)
-
-(require 'iy-go-to-char)
-(key-chord-define-global "jj" 'iy-go-to-char)
-(key-chord-define-global "vv" 'iy-go-to-char-backward)
-
-;; (require 'multiple-cursors)
-;; (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-;; (global-set-key (kbd "C->") 'mc/mark-next-like-this)
-;; (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-;; (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
 (defun select-current-line ()
   "Select the current line"
@@ -176,18 +121,18 @@
 
 (ido-yes-or-no-mode t)
 ;; I don't understand what it is
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-enabled-themes (quote (sanityinc-tomorrow-eighties)))
- '(custom-safe-themes
-	 (quote
-		("5dc0ae2d193460de979a463b907b4b2c6d2c9c4657b2e9e66b8898d2592e3de5" "98cc377af705c0f2133bb6d340bf0becd08944a588804ee655809da5d8140de6" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "1b8d67b43ff1723960eb5e0cba512a2c7a2ad544ddb2533a90101fd1852b426e" "82d2cac368ccdec2fcc7573f24c3f79654b78bf133096f9b40c20d97ec1d8016" "bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "3b0a350918ee819dca209cec62d867678d7dac74f6195f5e3799aa206358a983" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" default)))
- '(package-selected-packages
-	 (quote
-		(company tide elixir-mode scss-mode enh-ruby-mode ws-butler rspec-mode rubocop lua-mode emojify material-theme color-theme-sanityinc-tomorrow dracula-theme nginx-mode web-mode rjsx-mode projectile-rails yaml-mode sws-mode swiper smex smart-tab slim-mode sass-mode ruby-end robe rbenv rainbow-mode railscasts-theme quickrun projectile phi-autopair multiple-cursors mode-compile minitest markdown-mode magit load-relative key-chord json-mode jade-mode iy-go-to-char ido-yes-or-no ido-ubiquitous idle-highlight-mode hlinum find-file-in-project exec-path-from-shell csv-mode coffee-mode better-defaults aggressive-indent ag))))
+;; (custom-set-variables
+;;  ;; custom-set-variables was added by Custom.
+;;  ;; If you edit it by hand, you could mess it up, so be careful.
+;;  ;; Your init file should contain only one such instance.
+;;  ;; If there is more than one, they won't work right.
+;;  '(custom-enabled-themes (quote (sanityinc-tomorrow-eighties)))
+;;  '(custom-safe-themes
+;; 	 (quote
+;; 		("5dc0ae2d193460de979a463b907b4b2c6d2c9c4657b2e9e66b8898d2592e3de5" "98cc377af705c0f2133bb6d340bf0becd08944a588804ee655809da5d8140de6" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "1b8d67b43ff1723960eb5e0cba512a2c7a2ad544ddb2533a90101fd1852b426e" "82d2cac368ccdec2fcc7573f24c3f79654b78bf133096f9b40c20d97ec1d8016" "bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "3b0a350918ee819dca209cec62d867678d7dac74f6195f5e3799aa206358a983" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" default)))
+;;  '(package-selected-packages
+;; 	 (quote
+;; 		(company tide elixir-mode scss-mode enh-ruby-mode ws-butler rspec-mode rubocop lua-mode emojify material-theme color-theme-sanityinc-tomorrow dracula-theme nginx-mode web-mode rjsx-mode projectile-rails yaml-mode sws-mode swiper smex smart-tab slim-mode sass-mode ruby-end robe rbenv rainbow-mode railscasts-theme quickrun projectile phi-autopair multiple-cursors mode-compile minitest markdown-mode magit load-relative key-chord json-mode jade-mode iy-go-to-char ido-yes-or-no ido-ubiquitous idle-highlight-mode hlinum find-file-in-project exec-path-from-shell csv-mode coffee-mode better-defaults aggressive-indent ag))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -196,8 +141,8 @@
  '(mode-line ((t (:foreground "#030303" :background "#bdbdbd" :box nil))))
  '(mode-line-inactive ((t (:foreground "#f9f9f9" :background "#666666" :box nil)))))
 
-(getenv "PATH")
-(getenv "STUDIO")
+;;(getenv "PATH")
+;;(getenv "STUDIO")
 
 (require 'quickrun)
 (global-set-key (kbd "<f8>") 'quickrun)
@@ -225,14 +170,6 @@
 
 (setq ring-bell-function (lambda () (message "*woop*")))
 (add-hook 'after-init-hook #'global-emojify-mode)
-
-(setq typescript-indent-level 2)
-
-;; change json indention to 4 space.
-;; (add-hook 'json-mode-hook
-;;           (lambda ()
-;;             (make-local-variable 'js-indent-level)
-;;             (setq js-indent-level 4)))
 
 (add-hook 'ruby-mode-hook #'rubocop-mode)
 

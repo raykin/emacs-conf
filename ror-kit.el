@@ -1,3 +1,19 @@
+(defvar ruby-packages '(
+                        ;; robe ;; Jump to ruby method definition
+                        rbenv
+                        slim-mode
+                        dash  ;; required by minitest
+                        minitest
+                        ruby-end
+                        projectile-rails
+												rspec-mode
+                        )
+  )
+
+(dolist (p ruby-packages)
+  (when (not (package-installed-p p))
+    (package-install p)))
+
 ;; Enh-ruby-mode was autoinstalled by el-get, it conflicts with ruby-mode(1.1) in elpa-packages
 
 ;; custom Ruby Mode

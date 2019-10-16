@@ -13,7 +13,8 @@
 (add-to-list 'auto-mode-alist '("\\.md" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown" . markdown-mode))
 
-(global-set-key (kbd "M-/") 'comment-or-uncomment-region-or-line)
+;; comment-or-uncomment-region-or-line does not exist
+;; (global-set-key (kbd "M-/") 'comment-or-uncomment-region-or-line)
 (global-set-key (kbd "s-v") 'scroll-other-window)
 (global-set-key (kbd "s-v") 'scroll-other-window-down)
 (global-set-key (kbd "C-x g") 'magit-status)
@@ -111,5 +112,4 @@
 
 (add-hook 'jade-mode-hook 'projectile-mode)
 
-(setq js-indent-level 2)
 (global-set-key (kbd "M-/") 'comment-or-uncomment-region)
