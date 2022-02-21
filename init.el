@@ -21,15 +21,15 @@
                          ;; multiple-cursors ;; emacs 24.4 already include rectangle. looks duplicate with multiple-cursors
                          exec-path-from-shell ;; does it useful? dont know, 2016.2
                          hlinum
-                         iy-go-to-char
                          key-chord
                          sws-mode
+												 jade-mode
+												 mmm-mode
+												 sass-mode
                          railscasts-theme
-                         mode-compile
                          ws-butler
                          better-defaults
                          idle-highlight-mode
-                         ido-ubiquitous
                          ido-yes-or-no
                          smex
                          magit
@@ -191,4 +191,4 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-	 '(yaml-mode ws-butler vue-mode tide textmate sws-mode swiper smex smart-tab slim-mode scss-mode sass-mode ruby-end rubocop rspec-mode rjsx-mode rbenv rainbow-mode railscasts-theme quickrun projectile-rails phi-autopair nginx-mode multiple-cursors mode-compile minitest material-theme markdown-mode magit lua-mode load-relative key-chord json-mode jade-mode iy-go-to-char ido-yes-or-no ido-ubiquitous idle-highlight-mode hlinum find-file-in-project exec-path-from-shell enh-ruby-mode emojify elixir-mode dracula-theme csv-mode color-theme-sanityinc-tomorrow coffee-mode better-defaults aggressive-indent ag)))
+	 '(yaml-mode ws-butler vue-mode tide textmate sws-mode swiper smex smart-tab slim-mode scss-mode sass-mode ruby-end rubocop rspec-mode rjsx-mode rbenv rainbow-mode railscasts-theme quickrun projectile-rails phi-autopair nginx-mode multiple-cursors mode-compile minitest material-theme markdown-mode magit lua-mode load-relative key-chord json-mode jade-mode ido-yes-or-no idle-highlight-mode hlinum find-file-in-project exec-path-from-shell enh-ruby-mode emojify elixir-mode dracula-theme csv-mode color-theme-sanityinc-tomorrow coffee-mode better-defaults aggressive-indent ag)))

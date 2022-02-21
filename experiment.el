@@ -10,13 +10,8 @@
 (key-chord-mode 1)
 (key-chord-define-global "jk" 'undo)
 
-(require 'iy-go-to-char)
-(key-chord-define-global "jj" 'iy-go-to-char)
-(key-chord-define-global "vv" 'iy-go-to-char-backward)
-
 (defun recompile-init ()
   "Byte-compile all your dotfiles again."
   (interactive)
   ;; TODO: remove elpa-to-submit once everything's submitted.
   (byte-recompile-directory dotfiles-dir 0))
-
