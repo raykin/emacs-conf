@@ -27,8 +27,8 @@
 (global-set-key   [f6]   'goto-line)
 
 ;; list of global hook
-;; how to remove this hook on markdown-mode
-;; (add-hook 'before-save-hook 'delete-trailing-whitespace)
+;; how to disable this hook on markdown-mode
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 (require 'ws-butler)
 (add-hook 'prog-mode-hook 'ws-butler-mode)
 (add-hook 'prog-mode-hook 'turn-off-auto-fill)
@@ -41,8 +41,8 @@
 ;; (setq split-width-threshold nil)
 
 ;; Auto Split to Vertically
-(setq split-height-threshold nil)
-(setq split-width-threshold 80)
+;; (setq split-height-threshold nil)
+;; (setq split-width-threshold 80)
 
 ;; GUI
 (set-face-attribute 'default nil :height 170)
@@ -113,3 +113,5 @@
 (add-hook 'jade-mode-hook 'projectile-mode)
 
 (global-set-key (kbd "M-/") 'comment-or-uncomment-region)
+
+(require 'mmm-mode)

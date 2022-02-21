@@ -20,7 +20,7 @@
 (add-hook 'ruby-mode-hook 'turn-off-auto-fill)
 (add-to-list 'auto-mode-alist '("\\.json.ruby\\'" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.rabl\\'" . ruby-mode))
-(add-hook 'ruby-mode-hook 'robe-mode)
+;; (add-hook 'ruby-mode-hook 'robe-mode)
 (add-hook 'ruby-mode-hook 'projectile-mode)
 (projectile-rails-global-mode)
 ;; (setq projectile-enable-caching t)
