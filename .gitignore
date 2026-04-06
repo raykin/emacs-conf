@@ -16,3 +16,6 @@ ido.last
 emojis/
 network-security.data
 transient/
+straight/
+tree-sitter/
+*.elc

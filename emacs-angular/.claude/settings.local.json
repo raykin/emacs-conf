@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(timeout 5 emacs:*)",
+      "Bash(grep:*)",
+      "Bash(ls:*)",
+      "Bash(find:*)",
+      "Bash(env)",
+      "WebSearch",
+      "WebFetch(domain:github.com)"
+    ]
+  }
+}
