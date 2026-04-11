@@ -131,7 +131,6 @@
 (add-hook 'ruby-ts-mode-hook 'hs-minor-mode)
 
 ;; Load Claude integration (after all other configs)
-(require 'claude-integration)
 (require 'keybindings)
 
 ;; Open Rails init.el at startup

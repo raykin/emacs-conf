@@ -19,3 +19,8 @@ transient/
 straight/
 tree-sitter/
 *.elc
+*.eln
+eln-cache/
+history
+recentf
+tramp

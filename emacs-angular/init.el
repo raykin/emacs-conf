@@ -114,7 +114,6 @@
   (setq lsp-clients-angular-language-server-command 'my-angular-ls-command))
 
 ;; Load Claude integration (after all other configs)
-(require 'claude-integration)
 (require 'keybindings)
 
 ;; Open two files at startup

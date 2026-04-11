@@ -72,7 +72,6 @@
 (add-to-list 'auto-mode-alist '("\\.css\\'" . css-mode))
 
 ;; Load Claude integration (after all other configs)
-(require 'claude-integration)
 (require 'keybindings)
 
 ;; Open init.el at startup

@@ -3,6 +3,7 @@
 ## Structure
 
 - `emacs-shared/` — shared modules loaded by all configs
+- `emacs-daily/` — daily-use config (md, txt, json, yml); symlinked from `~/.emacs.d/init.el`
 - `emacs-rails/` — Rails development config
 - `emacs-angular/` — Angular development config
 - `emacs-react/` — React development config
@@ -29,7 +30,6 @@ Each `init.el` adds `../emacs-shared` to `load-path` and loads modules from ther
 | `windows.el` | Window management |
 | `keybindings.el` | Global keybindings |
 | `proxy.el` | SOCKS proxy via `$SOCKS_PORT` env var |
-| `claude-integration.el` | Claude Code via vterm backend |
 
 ## Key Decisions
 
