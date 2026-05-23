@@ -75,6 +75,6 @@
 (require 'keybindings)
 
 ;; Open init.el at startup
-(find-file "~/studio/dotfile/editor/emacs-react/init.el")
+(find-file "~/studio/emacs-conf/emacs-react/init.el")
 
 ;;; init.el ends here

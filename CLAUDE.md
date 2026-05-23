@@ -43,3 +43,9 @@ Each `init.el` adds `../emacs-shared` to `load-path` and loads modules from ther
 
 - Changes to `emacs-shared/` affect all three configs (rails/angular/react) — test impact before committing
 - `raykin-custom.el` in `emacs-rails/` is the Emacs custom-set-variables file — safe to commit
+
+## Debugging 
+
+- When debugging Emacs configuration issues, test with a minimal config in a separate environment first
+- Do NOT repeatedly ask the user to run debug commands - investigate and test configurations yourself
+- Use `emacs -Q` or temporary config files to isolate issues before applying changes to user's config

@@ -117,7 +117,7 @@
 (require 'keybindings)
 
 ;; Open two files at startup
-(find-file "~/studio/dotfile/editor/emacs-angular/init.el")
+(find-file "~/studio/emacs-conf/emacs-angular/init.el")
 ;;(find-file "~/code/kasa/package.json")
 
 ;;; init.el ends here

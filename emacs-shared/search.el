@@ -11,6 +11,7 @@
   :config
   (setq ag-reuse-window t)
   (setq ag-reuse-buffers t)
+  (add-to-list 'ag-arguments "--ignore-dir=images")
   (advice-add 'ag/search :after
               (lambda (&rest _)
                 "Switch focus to the actual *ag search* buffer after running ag/search."

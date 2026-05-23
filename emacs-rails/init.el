@@ -134,6 +134,6 @@
 (require 'keybindings)
 
 ;; Open Rails init.el at startup
-(find-file "~/studio/dotfile/editor/emacs-rails/init.el")
+(find-file "~/studio/emacs-conf/emacs-rails/init.el")
 
 ;;; init.el ends here
