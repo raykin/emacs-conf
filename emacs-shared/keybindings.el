@@ -19,7 +19,7 @@
   (load-file user-init-file)
   (message "Config reloaded"))
 
-(global-set-key (kbd "<f9>") 'reload-emacs-config)
+(global-set-key (kbd "<f10>") 'reload-emacs-config)
 (global-set-key (kbd "C-;") 'raykin/claude-send-context)
 
 (provide 'keybindings)

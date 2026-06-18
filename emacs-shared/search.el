@@ -22,6 +22,13 @@
 ;; wgrep-ag - editable ag buffers
 (use-package wgrep-ag)
 
+;; builtin project.el on C-c p (rails overrides this with projectile,
+;; since it loads its projectile block after (require 'search))
+(use-package project
+  :straight nil
+  :bind-keymap
+  ("C-c p" . project-prefix-map))
+
 ;; Display buffer settings for search results
 (add-to-list 'display-buffer-alist
              '("\\*ag search\\*" (display-buffer-same-window)))

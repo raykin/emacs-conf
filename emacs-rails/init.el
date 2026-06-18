@@ -52,9 +52,24 @@
   ("C-c r" . projectile-rails-command-map))
 
 ;; LSP Mode
+(defun raykin/ruby-lsp-setup ()
+  "Use bundler for ruby-lsp only when the project's Gemfile bundles it."
+  (let* ((root (locate-dominating-file default-directory "Gemfile"))
+         (lock (and root (expand-file-name "Gemfile.lock" root)))
+         (gemfile (and root (expand-file-name "Gemfile" root)))
+         (in-bundle (cl-some (lambda (f)
+                               (and f (file-exists-p f)
+                                    (with-temp-buffer
+                                      (insert-file-contents f)
+                                      (goto-char (point-min))
+                                      (re-search-forward "^\\s-*\\(gem\\s-+[\"']\\)?ruby-lsp\\b" nil t))))
+                             (list lock gemfile))))
+    (setq-local lsp-ruby-lsp-use-bundler (and in-bundle t)))
+  (lsp-deferred))
+
 (use-package lsp-mode
   :commands (lsp lsp-deferred)
-  :hook ((ruby-ts-mode . lsp-deferred)
+  :hook ((ruby-ts-mode . raykin/ruby-lsp-setup)
          (lsp-mode . lsp-enable-which-key-integration))
   :init
   (setq lsp-keymap-prefix "C-c l")
@@ -67,7 +82,7 @@
   (setq lsp-completion-provider :capf)
   (setq lsp-completion-enable t)
   (setq lsp-enable-snippet nil)
-  (setq lsp-ruby-lsp-use-bundler t)
+  (setq lsp-ruby-lsp-use-bundler nil) ;; default; overridden per-buffer in raykin/ruby-lsp-setup
   (setq lsp-warn-no-matched-clients nil)
   (setq lsp-enable-symbol-highlighting nil)
   (setq lsp-enable-on-type-formatting nil)
