@@ -105,7 +105,7 @@
     :demand t
     :config
     ;; Install grammars to shared directory
-    (setq treesit-auto-install 'prompt)
+    (setq treesit-auto-install t)
     ;; Ensure grammars are installed to the shared location
     (let ((shared-grammar-dir (expand-file-name "tree-sitter" straight-base-dir)))
       (unless (file-directory-p shared-grammar-dir)
