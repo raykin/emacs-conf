@@ -47,5 +47,5 @@ Each `init.el` adds `../emacs-shared` to `load-path` and loads modules from ther
 ## Debugging 
 
 - When debugging Emacs configuration issues, test with a minimal config in a separate environment first
-- Do NOT repeatedly ask the user to run debug commands - investigate and test configurations yourself
 - Use `emacs -Q` or temporary config files to isolate issues before applying changes to user's config
+- See `~/.claude/rules/emacs-headless-config-test.md` for the headless verification workflow

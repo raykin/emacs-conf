@@ -26,6 +26,7 @@
 (require 'git)
 (require 'search)
 (require 'utils)
+(require 'prose)
 (require 'windows)
 
 ;; ============================================================================

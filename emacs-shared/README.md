@@ -14,6 +14,8 @@ emacs-shared/
 ├── git.el             # Magit configuration
 ├── search.el          # AG and wgrep-ag
 ├── utils.el           # Utility packages (treemacs, markdown)
+├── prose.el           # English spelling + grammar checking
+├── aspell-words.txt   # Shared personal spelling dictionary (tech words)
 ├── windows.el         # Window management
 └── keybindings.el     # Global keybindings
 ```
@@ -33,9 +35,36 @@ Project-specific configs load these shared files:
 (require 'git)
 (require 'search)
 (require 'utils)
+(require 'prose)
 (require 'windows)
 (require 'keybindings)
 ```
+
+## Prose Checking (`prose.el`)
+
+English spelling and grammar checking for writing reports/docs. Hooks `text-mode`
+and `markdown-mode`.
+
+| Tool | What | How |
+|---|---|---|
+| flyspell | Live spelling underline | Automatic as you type |
+| flyspell-correct | Suggestion popup at point | `C-c s` (pick a fix, or `[Save word]` to whitelist) |
+| flycheck-languagetool | Live grammar (1.5s debounce) | Automatic after you pause |
+| langtool | On-demand grammar snapshot | `M-x langtool-check`, `langtool-correct-buffer`, `langtool-check-done` |
+
+Spelling exceptions (tech words like `OnPush`, `config`, `repo`) live in the
+committed `aspell-words.txt`. Add words via `C-c s` → `[Save word]`, then
+`M-x ispell-kill-ispell` to reload.
+
+### System dependencies (per machine)
+
+Emacs packages auto-install via straight.el on first launch. Spell/grammar engines
+are system binaries you install once:
+
+- **Linux:** `aspell`; LanguageTool unzipped to `/opt/LanguageTool/`
+- **macOS:** `brew install aspell languagetool` (brew pulls in Java)
+
+`prose.el` auto-detects the LanguageTool jar across Linux and Homebrew paths.
 
 ## Project-Specific Configs
 
