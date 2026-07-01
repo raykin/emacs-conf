@@ -1,26 +1,24 @@
 ;;; search.el --- Search tools configuration -*- lexical-binding: t; -*-
 
 ;;; Commentary:
-;; AG and wgrep-ag setup
+;; ripgrep (rg.el) and wgrep setup
 
 ;;; Code:
 
-;; AG - search tool
-(use-package ag
-  :bind ("C-x C-a" . ag-project)
+;; rg - search tool
+(use-package rg
+  :bind ("C-x C-a" . rg-project)
   :config
-  (setq ag-reuse-window t)
-  (setq ag-reuse-buffers t)
-  (add-to-list 'ag-arguments "--ignore-dir=images")
-  (advice-add 'ag/search :after
+  (setq rg-command-line-flags '("--glob=!images"))
+  (advice-add 'rg-run :after
               (lambda (&rest _)
-                "Switch focus to the actual *ag search* buffer after running ag/search."
-                (let ((ag-buffer (get-buffer "*ag search*")))
-                  (when ag-buffer
-                    (pop-to-buffer ag-buffer))))))
+                "Switch focus to the *rg* buffer after running a search."
+                (let ((rg-buffer (get-buffer "*rg*")))
+                  (when rg-buffer
+                    (pop-to-buffer rg-buffer))))))
 
-;; wgrep-ag - editable ag buffers
-(use-package wgrep-ag)
+;; wgrep - editable rg buffers
+(use-package wgrep)
 
 ;; builtin project.el on C-c p (rails overrides this with projectile,
 ;; since it loads its projectile block after (require 'search))
@@ -31,7 +29,7 @@
 
 ;; Display buffer settings for search results
 (add-to-list 'display-buffer-alist
-             '("\\*ag search\\*" (display-buffer-same-window)))
+             '("\\*rg\\*" (display-buffer-same-window)))
 
 (provide 'search)
 ;;; search.el ends here

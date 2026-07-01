@@ -25,3 +25,5 @@ history
 recentf
 tramp
 .aider*
+
+.claude/settings.local.json

@@ -7,10 +7,10 @@
    '("0325a6b5eea7e5febae709dab35ec8648908af12cf2d2b569bedc8da0a3a81c1"
      default))
  '(package-selected-packages
-   '(nginx-mode coffee-mode wgrep-ag sass-mode yaml-mode vertico treemacs
+   '(nginx-mode coffee-mode wgrep sass-mode yaml-mode vertico treemacs
                 slim-mode robe projectile-rails markdown-mode magit
                 flymake-ruby elixir-mode doom-themes
-                counsel-projectile company ag)))
+                counsel-projectile company rg)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
